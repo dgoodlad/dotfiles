@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/dave/code/trike/kudda/videos/app/views/layouts'
+let g:netrw_dirhist_2='/Users/dave/code/trike/kudda/teams/app/views/videoplayer'
+let g:netrw_dirhist_3='/Users/dave/code/trike/kudda/teams/app/views'
+let g:netrw_dirhist_4='/Users/dave/code/trike/kudda/teams/app'
+let g:netrw_dirhist_5='/Users/dave/code/trike/kudda/teams/app/helpers'
+let g:netrw_dirhist_6='/Users/dave/code/trike/kudda/teams/public/javascripts'
+let g:netrw_dirhist_7='/Users/dave/.emacs.d'
+let g:netrw_dirhist_8='/Users/dave/Downloads/LiveControl_mac/LiveControl.app/Contents/Resources/src'
