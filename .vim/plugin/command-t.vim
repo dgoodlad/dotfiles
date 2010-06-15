@@ -27,8 +27,8 @@ if exists("g:command_t_loaded")
 endif
 let g:command_t_loaded = 1
 
-command CommandT :call <SID>CommandTShow()
-command CommandTFlush :call <SID>CommandTFlush()
+command -nargs=? -complete=dir CommandT call <SID>CommandTShow(<q-args>)
+command CommandTFlush call <SID>CommandTFlush()
 
 silent! nmap <unique> <silent> <Leader>t :CommandT<CR>
 
@@ -39,7 +39,7 @@ function s:CommandTRubyWarning()
   echohl none
 endfunction
 
-function s:CommandTShow()
+function s:CommandTShow(arg)
   if has('ruby')
     ruby $command_t.show
   else
@@ -59,16 +59,16 @@ if !has('ruby')
   finish
 endif
 
-function CommandTKeyPressed(arg)
-  ruby $command_t.key_pressed
+function CommandTHandleKey(arg)
+  ruby $command_t.handle_key
 endfunction
 
-function CommandTBackspacePressed()
-  ruby $command_t.backspace_pressed
+function CommandTBackspace()
+  ruby $command_t.backspace
 endfunction
 
-function CommandTDeletePressed()
-  ruby $command_t.delete_pressed
+function CommandTDelete()
+  ruby $command_t.delete
 endfunction
 
 function CommandTAcceptSelection()
@@ -132,7 +132,7 @@ ruby << EOF
     $command_t = CommandT::Controller.new
   rescue LoadError
     load_path_modified = false
-    Vim::evaluate('&runtimepath').to_s.split(',').each do |path|
+    VIM::evaluate('&runtimepath').to_s.split(',').each do |path|
       lib = "#{path}/ruby"
       if !$LOAD_PATH.include?(lib) and File.exist?(lib)
         $LOAD_PATH << lib
