@@ -88,11 +88,10 @@ set list
 set listchars=tab:»· 
 set listchars+=trail:·
 
-" Toggle the taglist with F8
-nnoremap F8 :TlistToggle
+map <F2> :NERDTreeToggle<CR>
 
 " Turn off search highlights
-map C-n :silent nohl
+map <C-n> :silent nohl<CR>
 
 " Make window splitting behave
 set noequalalways
