@@ -190,7 +190,7 @@ if !has("gui_running")
 
   colorscheme xterm16
 
-  if &term == 'rxvt-256color' || &term == 'screen-256color'
+  if &t_Co == 256 || (&term == 'xterm-256color' || &term == 'rxvt-256color' || &term == 'screen-256color')
     colorscheme xoria256
   endif
 endif
