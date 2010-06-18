@@ -39,3 +39,4 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 # Git aliases
 alias gfo='git fetch origin'
+alias gsu='git submodule update'
