@@ -23,6 +23,7 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 
 PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+PATH=/usr/X11/bin:/usr/X11/sbin:$PATH
 PATH=/opt/local/bin:/opt/local/sbin:$PATH
 PATH=/opt/local/lib/mysql5/bin:$PATH
 PATH=$HOME/bin:$PATH
