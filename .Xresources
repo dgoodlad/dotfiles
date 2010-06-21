@@ -1,10 +1,11 @@
 URxvt.background: black
 URxvt.foreground: white
 URxvt.fading:     20
-!URxvt.font:       xft:Anonymous Pro:pixelsize=12
+URxvt.font:       xft:Anonymous Pro:pixelsize=12
 !URxvt.font:       xft:ProFont:pixelsize=12
 !URxvt.font:       xft:Terminus
-URxvt.font:       xft:Inconsolata:pixelsize=12
+!URxvt.font:       xft:Inconsolata:pixelsize=14
+!URxvt.font:       xft:Consolas:pixelsize=12
 URxvt.visualBell: True
 URxvt.scrollBar:  False
 URxvt.skipBuiltinGlyphs: True
