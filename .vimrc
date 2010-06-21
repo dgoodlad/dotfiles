@@ -84,9 +84,10 @@ set ttyfast
 set viminfo='1000,\"50,f1,<500
 
 " Show characters for expanded TABs, etc
-set list 
-set listchars=tab:»· 
-set listchars+=trail:·
+set list
+set listchars=tab:>-,trail:.,extends:>
+"set listchars=tab:»· 
+"set listchars+=trail:·
 
 map <F2> :NERDTreeToggle<CR>
 
