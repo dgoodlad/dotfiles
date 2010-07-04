@@ -15,6 +15,9 @@ filetype plugin on
 " Use git for Ctrl-D diff highlighting
 let g:SCMDiffCommand = 'git'
 
+" Use comma for the <Leader> key
+let mapleader = ","
+
 " Automatic indentation
 set autoindent
 set smartindent
