@@ -4,6 +4,9 @@ set nocompatible
 " Use zsh instead of sh
 set shell=/bin/zsh
 
+" MUST be loaded before running 'filetype plugin on'
+call pathogen#runtime_append_all_bundles()
+
 syntax on
 filetype on
 filetype indent on
@@ -14,6 +17,9 @@ filetype plugin on
 
 " Use git for Ctrl-D diff highlighting
 let g:SCMDiffCommand = 'git'
+
+" Show the command-t window at the top
+let g:CommandTMatchWindowAtTop = 1
 
 " Use comma for the <Leader> key
 let mapleader = ","
@@ -76,6 +82,14 @@ set scrolloff=3
 
 " Enable vim modelines
 set modeline
+
+" Show a menu when matching files etc
+set wildmenu
+
+" Ignore some patterns in wildcard listings
+set wildignore+=*.o,*.obj
+set wildignore+=.svn,.git
+set wildignore+=vendor/rails/*
 
 " Use the 'global' flag by default in search/replace
 set gdefault
