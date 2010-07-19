@@ -12,7 +12,7 @@ if has("autocmd")
   augroup ragtag
     autocmd!
     autocmd FileType *html*,wml,xml,xslt,xsd,jsp    call s:Init()
-    autocmd FileType php,asp*,cf,mason,eruby        call s:Init()
+    autocmd FileType php,asp*,cf,mason,eruby,liquid call s:Init()
     if version >= 700
       autocmd InsertLeave * call s:Leave()
     endif
@@ -81,9 +81,11 @@ function! s:Init()
     if !exists("b:surround_101")
       let b:surround_101 = "[% \r %]\n[% END %]"
     endif
-  elseif &ft =~ "django"
-    inoremap <buffer> <C-X><Lt> {{
-    inoremap <buffer> <C-X>>    }}
+  elseif &ft =~ "django" || &ft == "liquid"
+    inoremap <buffer> <SID>ragtagOopen    {{<Space>
+    inoremap <buffer> <SID>ragtagOclose   <Space>}}<Left><Left>
+    inoremap <buffer> <C-X><Lt> {%
+    inoremap <buffer> <C-X>>    %}
     let b:surround_45 = "{% \r %}"
     let b:surround_61 = "{{ \r }}"
   elseif &ft == "mason"
@@ -107,8 +109,8 @@ function! s:Init()
     let b:surround_45 = "<% \r %>"
     let b:surround_61 = "<%= \r %>"
   endif
-  imap     <buffer> <C-X>= <SID>ragtagOopen<SID>ragtagOclose<Left>
-  imap     <buffer> <C-X>+ <C-V><NL><Esc>I<SID>ragtagOopen<Space><Esc>A<Space><SID>ragtagOclose<Esc>F<NL>s
+  imap <script> <buffer> <C-X>= <SID>ragtagOopen<SID>ragtagOclose<Left>
+  imap <script> <buffer> <C-X>+ <C-V><NL><Esc>I<SID>ragtagOopen<Esc>A<SID>ragtagOclose<Esc>F<NL>s
   " <%\n\n%>
   if &ft == "cf"
     inoremap <buffer> <C-X>] <cfscript><CR></cfscript><Esc>O
@@ -127,13 +129,13 @@ function! s:Init()
     inoremap  <buffer> <C-X>- <cf><Left>
     inoremap  <buffer> <C-X>_ <cfset ><Left>
   else
-    imap      <buffer> <C-X>- <C-X><Lt><Space><Space><C-X>><Esc>2hi
-    imap      <buffer> <C-X>_ <C-V><NL><Esc>I<C-X><Lt><Space><Esc>A<Space><C-X>><Esc>F<NL>s
+    imap <script> <buffer> <C-X>- <C-X><Lt><Space><Space><C-X>><Esc>2hi
+    imap <script> <buffer> <C-X>_ <C-V><NL><Esc>I<C-X><Lt><Space><Esc>A<Space><C-X>><Esc>F<NL>s
   endif
   " Comments
   if &ft =~ '^asp'
-    imap     <buffer> <C-X>'     <C-X><Lt>'<Space><Space><C-X>><Esc>2hi
-    imap     <buffer> <C-X>"     <C-V><NL><Esc>I<C-X><Lt>'<Space><Esc>A<Space><C-X>><Esc>F<NL>s
+    imap <script> <buffer> <C-X>' <C-X><Lt>'<Space><Space><C-X>><Esc>2hi
+    imap <script> <buffer> <C-X>" <C-V><NL><Esc>I<C-X><Lt>'<Space><Esc>A<Space><C-X>><Esc>F<NL>s
     let b:surround_35 = maparg("<C-X><Lt>","i")."' \r ".maparg("<C-X>>","i")
   elseif &ft == "jsp"
     inoremap <buffer> <C-X>'     <Lt>%--<Space><Space>--%><Esc>4hi
@@ -148,13 +150,17 @@ function! s:Init()
     inoremap <buffer> <C-X>'     <Lt>!--<Space><Space>--><Esc>3hi
     inoremap <buffer> <C-X>"     <C-V><NL><Esc>I<!--<Space><Esc>A<Space>--><Esc>F<NL>s
     let b:surround_35 = "<!-- \r -->"
-  elseif &ft == "django"
+  elseif &ft == "django" || &ft == "htmldjango"
     inoremap <buffer> <C-X>'     {#<Space><Space>#}<Esc>2hi
     inoremap <buffer> <C-X>"     <C-V><NL><Esc>I<C-X>{#<Space><Esc>A<Space>#}<Esc>F<NL>s
     let b:surround_35 = "{# \r #}"
+  elseif &ft == "liquid"
+    inoremap <buffer> <C-X>'     {%<Space>comment<Space>%}{%<Space>endcomment<Space>%}<Esc>15hi
+    inoremap <buffer> <C-X>"     <C-V><NL><Esc>I<C-X>{%<Space>comment<Space>%}<Esc>A{%<Space>endcomment<Space>%}<Esc>F<NL>s
+    let b:surround_35 = "{% comment %}\r{% endcomment %}"
   else
-    imap     <buffer> <C-X>'     <C-X><Lt>#<Space><Space><C-X>><Esc>2hi
-    imap     <buffer> <C-X>"     <C-V><NL><Esc>I<C-X><Lt>#<Space><Esc>A<Space><C-X>><Esc>F<NL>s
+    imap <script> <buffer> <C-X>' <C-X><Lt>#<Space><Space><C-X>><Esc>2hi
+    imap <script> <buffer> <C-X>" <C-V><NL><Esc>I<C-X><Lt>#<Space><Esc>A<Space><C-X>><Esc>F<NL>s
     let b:surround_35 = maparg("<C-X><Lt>","i")."# \r ".maparg("<C-X>>","i")
   endif
   imap <buffer> <C-X>%           <Plug>ragtagUrlEncode
