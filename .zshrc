@@ -35,8 +35,17 @@ export MANPATH
 
 export EDITOR=vim
 
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-
 # Git aliases
 alias gfo='git fetch origin'
 alias gsu='git submodule update'
+
+# Ruby Version Manager
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+
+# Don't show ~rvm_rvmrc_cwd as path when using rvm
+unsetopt AUTO_NAME_DIRS
+
+# Node Version Manager
+NVM_DIR=$HOME/.nvm
+source $NVM_DIR/nvm.sh
+nvm use
