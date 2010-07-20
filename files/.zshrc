@@ -46,6 +46,8 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 unsetopt AUTO_NAME_DIRS
 
 # Node Version Manager
-NVM_DIR=$HOME/.nvm
-source $NVM_DIR/nvm.sh
-nvm use
+if [[ -s $HOME/.nvm ]] ; then
+  NVM_DIR=$HOME/.nvm
+  source $NVM_DIR/nvm.sh
+  nvm use
+fi
