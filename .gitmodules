@@ -1,6 +1,6 @@
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
+[submodule "files/oh-my-zsh"]
+	path = files/oh-my-zsh
 	url = git@github.com:dgoodlad/oh-my-zsh.git
-[submodule ".vim/bundle/vim-coffee-script"]
-	path = .vim/bundle/vim-coffee-script
+[submodule "files/.vim/bundle/vim-coffee-script"]
+	path = files/.vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
