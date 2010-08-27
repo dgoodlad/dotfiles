@@ -13,4 +13,4 @@ xrdb -merge $HOME/.Xresources
 /opt/local/bin/urxvtd -q -o -f
 
 # AWESOME!
-/usr/local/bin/awesome 2>&1 > /tmp/awesome.log
+#/usr/local/bin/awesome 2>&1 > /tmp/awesome.log
