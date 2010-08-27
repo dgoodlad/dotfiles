@@ -39,11 +39,13 @@ export EDITOR=vim
 alias gfo='git fetch origin'
 alias gsu='git submodule update'
 
-# Ruby Version Manager
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
-
 # Don't show ~rvm_rvmrc_cwd as path when using rvm
 unsetopt AUTO_NAME_DIRS
+# Also required for rvm
+setopt nullglob
+
+# Ruby Version Manager
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 # Node Version Manager
 if [[ -s $HOME/.nvm ]] ; then
