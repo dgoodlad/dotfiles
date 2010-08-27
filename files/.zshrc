@@ -53,3 +53,7 @@ if [[ -s $HOME/.nvm ]] ; then
   source $NVM_DIR/nvm.sh
   nvm use
 fi
+
+# Enable custom OSX Terminal colors
+export CLICOLOR=1
+
