@@ -203,10 +203,10 @@ if !has("gui_running")
   "    \ set t_Co=256 |
   "  \ endif
 
-  let xterm16_colormap   = 'soft'
-  let xterm16_brightness = 'high'
+  "let xterm16_colormap   = 'soft'
+  "let xterm16_brightness = 'high'
 
-  colorscheme xterm16
+  "colorscheme xterm16
 
   if &t_Co == 256 || (&term == 'xterm-256color' || &term == 'rxvt-256color' || &term == 'screen-256color')
     colorscheme xoria256
