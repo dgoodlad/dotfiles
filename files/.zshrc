@@ -57,3 +57,7 @@ fi
 # Enable custom OSX Terminal colors
 export CLICOLOR=1
 
+alias rg='rails generate'
+alias rc='rails console'
+alias rs='rails server thin'
+
