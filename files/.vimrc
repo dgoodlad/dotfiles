@@ -121,6 +121,16 @@ set nobackup
 " Enable the mouse - clickity clickity
 set mouse=a
 
+" Ctrl-L inserts a hashrocket
+imap <C-l> =>
+
+" Syntastic syntax checking
+set statusline+=\ 
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set syntastic_enable_signs
+
 " Correct typos.
 iab beacuse    because
 iab becuase    because
