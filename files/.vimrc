@@ -122,7 +122,16 @@ set nobackup
 set mouse=a
 
 " Ctrl-L inserts a hashrocket
-imap <C-l> =>
+imap <C-l> \ =>\ 
+
+" Completion
+set ofu=syntaxcomplete#Complete
+set completeopt=longest,menuone
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'`
+let g:SuperTabCrMapping=0
 
 " Syntastic syntax checking
 set statusline+=\ 

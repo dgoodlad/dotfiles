@@ -4,3 +4,6 @@
 [submodule "files/.vim/bundle/vim-coffee-script"]
 	path = files/.vim/bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
+[submodule "files/.vim/bundle/supertab"]
+	path = files/.vim/bundle/supertab
+	url = http://github.com/ervandew/supertab.git
