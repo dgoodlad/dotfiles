@@ -2,7 +2,7 @@
 " Language:	LESS Cascading Style Sheets
 " Maintainer:	Leaf Corcoran <leafot@gmail.com>
 " Modifier:	Bryan J Swift <bryan@bryanjswift.com>
-" URL: 		http://leafo.net/lessphp/vim/less.vim
+" URL:		http://leafo.net/lessphp/vim/less.vim
 " URL:		http://gist.github.com/161047
 " Last Change:	2009 August 4
 " LESS by Leaf Corcoran
@@ -21,8 +21,6 @@ endif
 endif
 
 syn case ignore
-
-
 
 syn keyword cssTagName abbr acronym address applet area a b base
 syn keyword cssTagName basefont bdo big blockquote body br button
@@ -179,18 +177,12 @@ syn keyword cssAuralAttr contained male female child code digits continuous
 syn match cssTableProp contained "\<\(caption-side\|table-layout\|border-collapse\|border-spacing\|empty-cells\|speak-header\)\>"
 syn keyword cssTableAttr contained fixed collapse separate show hide once always
 
-
-
 syn match lessComment "//.*$" contains=@Spell
 syn match lessVariable "@[A-Za-z_-][A-Za-z0-9_-]*" contained
 syn region lessVariableDefinition start="^@" end=";" contains=css.*Attr,css.*Prop,cssComment,cssValue.*,cssColor,cssURL,cssImportant,cssStringQ,cssStringQQ,cssFunction,cssUnicodeEscape,cssDefinition,cssClassName,cssTagName,cssIdentifier,lessComment,lessVariable,lessFunction
 
 " captures both the definition and the call
 syn region lessFunction matchgroup=lessFuncDef start="@[A-Za-z_-][A-Za-z0-9_-]*(" end=")" contains=css.*Attr,css.*Prop,cssComment,cssValue.*,cssColor,cssURL,cssImportant,cssStringQ,cssStringQQ,cssFunction,cssUnicodeEscape,cssDefinition,cssClassName,cssTagName,cssIdentifier,lessComment,lessVariable,lessFunction
-
-
-
-
 
 " FIXME: This allows cssMediaBlock before the semicolon, which is wrong.
 syn region cssInclude start="@import" end=";" contains=cssComment,cssURL,cssUnicodeEscape,cssMediaType
@@ -212,9 +204,6 @@ syn match cssSpecialCharQ +\\'+ contained
 syn region cssStringQQ start=+"+ skip=+\\\\\|\\"+ end=+"+ contains=cssUnicodeEscape,cssSpecialCharQQ
 syn region cssStringQ start=+'+ skip=+\\\\\|\\'+ end=+'+ contains=cssUnicodeEscape,cssSpecialCharQ
 syn match cssClassName "\.[A-Za-z][A-Za-z0-9_-]\+"
-
-
-
 
 if main_syntax == "css"
   syn sync minlines=10
@@ -302,4 +291,3 @@ endif
 
 
 " vim: ts=8
-
