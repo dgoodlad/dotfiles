@@ -122,7 +122,7 @@ set nobackup
 set mouse=a
 
 " Ctrl-L inserts a hashrocket
-imap <C-l> \ =>\ 
+imap <C-l> <Space>=><Space>
 
 " Completion
 set ofu=syntaxcomplete#Complete
