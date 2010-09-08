@@ -1,3 +1,6 @@
+WIRBLE_VERSION = '0.1.3'
+INTERACTIVE_EDITOR_VERSION = '0.0.4'
+
 def try_require(lib)
   begin
     require lib
@@ -9,11 +12,11 @@ end
 
 try_require 'rubygems'
 
-try_require 'wirble' do
+try_require "#{ENV['GEM_HOME']}/gems/wirble-#{WIRBLE_VERSION}/lib/wirble" do
   Wirble.init
   Wirble.colorize
 end
 
 # Enable 'vim' method to edit irb code in vim
-try_require 'interactive_editor'
+try_require "#{ENV['GEM_HOME']}/gems/interactive_editor-#{INTERACTIVE_EDITOR_VERSION}/lib/interactive_editor"
 
