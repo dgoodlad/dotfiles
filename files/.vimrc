@@ -138,7 +138,7 @@ set statusline+=\
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-set syntastic_enable_signs
+let g:syntastic_enable_signs=1
 
 " Correct typos.
 iab beacuse    because
