@@ -38,7 +38,8 @@ set formatoptions+=q " Allow formatting of comments with 'gq'
 set formatoptions+=n " Recognize numbered lists
 set formatoptions+=l " Don't break long lines that were already there
 
-set textwidth=78  " From settings above, this is only for comments
+set textwidth=78     " From settings above, this is only for comments
+set colorcolumn=81   " Highlight column 81
 
 " Don't artificially wrap long lines on the screen
 set nowrap
@@ -75,6 +76,18 @@ set noerrorbells
 set hlsearch
 set incsearch
 
+" Use the 'global' flag by default in search/replace
+set gdefault
+
+" Do case-insensitive search unless the search string has at least one capital
+" letter
+set ignorecase
+set smartcase
+
+" Automatically enable 'normal' regex mode when starting to search
+nnoremap / /\v
+vnoremap / /\v
+
 set showcmd
 
 " Keep 3 lines of context when scrolling
@@ -90,9 +103,6 @@ set wildmenu
 set wildignore+=*.o,*.obj
 set wildignore+=.svn,.git
 set wildignore+=vendor/rails/*
-
-" Use the 'global' flag by default in search/replace
-set gdefault
 
 " Yes, we have a fast terminal
 set ttyfast
@@ -121,8 +131,19 @@ set nobackup
 " Enable the mouse - clickity clickity
 set mouse=a
 
+" Disable the fscking F1 key, make it esc instead
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
 " Ctrl-L inserts a hashrocket
 imap <C-l> <Space>=><Space>
+
+" Ack on ,a
+nnoremap <leader>a :Ack
+
+" Edit my .vimrc
+nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
 
 " Completion
 set ofu=syntaxcomplete#Complete
