@@ -136,6 +136,9 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
+" Ctrl-Enter opens a line above in insert-mode (works like O in normal mode)
+imap <C-Return> <ESC>O
+
 " Ctrl-L inserts a hashrocket
 imap <C-l> <Space>=><Space>
 
