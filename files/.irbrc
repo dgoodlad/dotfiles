@@ -1,5 +1,5 @@
 WIRBLE_VERSION = '0.1.3'
-INTERACTIVE_EDITOR_VERSION = '0.0.4'
+INTERACTIVE_EDITOR_VERSION = '0.0.5'
 
 def try_require(lib)
   begin
