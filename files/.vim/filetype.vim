@@ -7,3 +7,7 @@ endif
 augroup markdown
  au! BufRead,BufNewFile *.mkd   setfiletype mkd
 augroup END
+
+augroup mustache
+  au! BufRead,BufNewFile *.mustache setfiletype mustache
+augroup END
