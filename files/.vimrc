@@ -39,7 +39,7 @@ set formatoptions+=n " Recognize numbered lists
 set formatoptions+=l " Don't break long lines that were already there
 
 set textwidth=78     " From settings above, this is only for comments
-set colorcolumn=81   " Highlight column 81
+set colorcolumn=+3   " Highlight column 81
 
 " Don't artificially wrap long lines on the screen
 set nowrap
