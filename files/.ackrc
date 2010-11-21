@@ -1,0 +1,4 @@
+--type-set
+  coffee=.coffee,Cakefile
+--type-set
+  sass=.sass,.scss
