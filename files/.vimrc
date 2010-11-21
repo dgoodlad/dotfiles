@@ -145,7 +145,7 @@ imap <C-Return> <ESC>O
 imap <C-l> <Space>=><Space>
 
 " Ack on ,a
-nnoremap <leader>a :Ack
+nnoremap <leader>a :Ack<Space>
 
 " Edit my .vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
