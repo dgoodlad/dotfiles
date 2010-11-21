@@ -1,6 +1,8 @@
 " This isn't 1980, we don't need to act like plain 'vi'
 set nocompatible
 
+set hidden
+
 " Use zsh instead of sh
 set shell=/bin/zsh
 
@@ -147,6 +149,9 @@ nnoremap <leader>a :Ack
 
 " Edit my .vimrc
 nnoremap <leader>ev <C-w><C-v><C-l>:e $MYVIMRC<cr>
+
+" Buffer explorer
+nnoremap <leader>b :LustyBufferExplorer<cr>
 
 " Completion
 set ofu=syntaxcomplete#Complete
