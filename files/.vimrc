@@ -21,7 +21,7 @@ filetype plugin on
 let g:SCMDiffCommand = 'git'
 
 " Show the command-t window at the top
-let g:CommandTMatchWindowAtTop = 1
+"let g:CommandTMatchWindowAtTop = 1
 
 " Use comma for the <Leader> key
 let mapleader = ","
