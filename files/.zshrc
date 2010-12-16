@@ -38,6 +38,7 @@ export EDITOR=vim
 # Git aliases
 alias gfo='git fetch origin'
 alias gsu='git submodule update'
+alias b='git checkout -b'
 
 # Don't show ~rvm_rvmrc_cwd as path when using rvm
 unsetopt AUTO_NAME_DIRS
@@ -61,3 +62,4 @@ alias rg='rails generate'
 alias rc='rails console'
 alias rs='rails server thin'
 
+alias gmom='git merge origin/master'
