@@ -257,6 +257,8 @@ if !has("gui_running")
   "colorscheme xterm16
 
   if &t_Co == 256 || (&term == 'xterm-256color' || &term == 'rxvt-256color' || &term == 'screen-256color')
-    colorscheme xoria256
+    "colorscheme xoria256
+    "let g:zenburn_high_Contrast=1
+    colorscheme zenburn
   endif
 endif
