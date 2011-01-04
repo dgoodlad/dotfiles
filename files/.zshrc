@@ -49,11 +49,11 @@ setopt nullglob
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 # Node Version Manager
-if [[ -s $HOME/.nvm ]] ; then
-  NVM_DIR=$HOME/.nvm
-  source $NVM_DIR/nvm.sh
-  nvm use
-fi
+#if [[ -s $HOME/.nvm ]] ; then
+#  NVM_DIR=$HOME/.nvm
+#  source $NVM_DIR/nvm.sh
+#  nvm use
+#fi
 
 # Enable custom OSX Terminal colors
 export CLICOLOR=1
