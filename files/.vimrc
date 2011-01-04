@@ -42,6 +42,7 @@ set formatoptions+=l " Don't break long lines that were already there
 
 set textwidth=78     " From settings above, this is only for comments
 set colorcolumn=+3   " Highlight column 81
+set cursorline       " Highlight the line that the cursor is on
 
 " Don't artificially wrap long lines on the screen
 set nowrap
