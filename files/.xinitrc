@@ -1,6 +1,3 @@
-# XQuartz.app starts in the root directory; I want to go home.
-cd $HOME
-
 # Visual bell
 xset b off
 xset b 0 0 0
@@ -10,7 +7,9 @@ xmodmap $HOME/.xmodmap
 xrdb -merge $HOME/.Xresources
 
 # Server for urxvt
-/opt/local/bin/urxvtd -q -o -f
+/usr/bin/urxvtd -q -o -f
+
+#cairo-compmgr &
 
 # AWESOME!
-#/usr/local/bin/awesome 2>&1 > /tmp/awesome.log
+/usr/bin/awesome 2>&1 > /tmp/awesome.log
