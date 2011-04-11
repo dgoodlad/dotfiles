@@ -1,6 +1,6 @@
-set guifont=Inconsolata:h14
+set guifont=Meslo\ LG\ S\ DZ\ 8
 
 " Hide all the gui widgets. No menus, no scrollbars, etc.
 set guioptions=
 
-colorscheme xoria256
+colorscheme solarized
