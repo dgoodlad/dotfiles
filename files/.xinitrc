@@ -9,7 +9,7 @@ xrdb -merge $HOME/.Xresources
 # Server for urxvt
 /usr/bin/urxvtd -q -o -f
 
-#cairo-compmgr &
+auto-disper -c &
 
 # AWESOME!
 /usr/bin/awesome 2>&1 > /tmp/awesome.log
