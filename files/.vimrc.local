@@ -1,4 +1,4 @@
-"set hidden
+set hidden
 
 " Use zsh instead of sh
 "set shell=/bin/zsh
