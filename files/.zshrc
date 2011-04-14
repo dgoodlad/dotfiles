@@ -55,6 +55,10 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 #  nvm use
 #fi
 
+if [[ -x /usr/bin/keychain ]]; then
+  eval `keychain --eval --nogui -Q -q --noask`
+fi
+
 # Enable custom OSX Terminal colors
 export CLICOLOR=1
 
