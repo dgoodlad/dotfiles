@@ -2,6 +2,10 @@
 xset b off
 xset b 0 0 0
 
+# Enable palm-detection on the trackpad
+synclient PalmDetect=1
+synclient HorizTwoFingerScroll=1
+
 # Load my keymaps and resources
 xmodmap $HOME/.xmodmap
 xrdb -merge $HOME/.Xresources
