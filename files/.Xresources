@@ -9,6 +9,7 @@ Xft.rgba: rgb
 
 URxvt.font:              xft:Meslo LG S DZ:pixelsize=11
 URxvt.visualBell:        True
+URxvt.urgentOnBell:      True
 URxvt.scrollBar:         False
 URxvt.skipBuiltinGlyphs: True
 URxvt.internalBorder:    1
