@@ -48,6 +48,12 @@ setopt nullglob
 # Ruby Version Manager
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
+# rbenv
+if [[ -d $HOME/.rbenv/bin ]] ; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(rbenv init -)"
+fi
+
 # Node Version Manager
 #if [[ -s $HOME/.nvm ]] ; then
 #  NVM_DIR=$HOME/.nvm
