@@ -52,7 +52,7 @@ unsetopt AUTO_NAME_DIRS
 setopt nullglob
 
 # Ruby Version Manager
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+#if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]] ; then
