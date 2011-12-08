@@ -1,3 +1,45 @@
 [submodule "files/oh-my-zsh"]
 	path = files/oh-my-zsh
 	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "files/.vim/bundle/ack.vim"]
+	path = files/.vim/bundle/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule "files/.vim/bundle/Command-T"]
+	path = files/.vim/bundle/Command-T
+	url = https://github.com/wincent/Command-T.git
+[submodule "files/.vim/bundle/lusty"]
+	path = files/.vim/bundle/lusty
+	url = https://github.com/sjbach/lusty.git
+[submodule "files/.vim/bundle/vim-coffee-script"]
+	path = files/.vim/bundle/vim-coffee-script
+	url = https://github.com/kchmck/vim-coffee-script.git
+[submodule "files/.vim/bundle/vim-colors-solarized"]
+	path = files/.vim/bundle/vim-colors-solarized
+	url = git://github.com/altercation/vim-colors-solarized.git
+[submodule "files/.vim/bundle/vim-cucumber"]
+	path = files/.vim/bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+[submodule "files/.vim/bundle/vim-fugitive"]
+	path = files/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule "files/.vim/bundle/vim-git"]
+	path = files/.vim/bundle/vim-git
+	url = https://github.com/tpope/vim-git.git
+[submodule "files/.vim/bundle/vim-haml"]
+	path = files/.vim/bundle/vim-haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule "files/.vim/bundle/vim-javascript"]
+	path = files/.vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript.git
+[submodule "files/.vim/bundle/vim-markdown"]
+	path = files/.vim/bundle/vim-markdown
+	url = https://github.com/tpope/vim-markdown.git
+[submodule "files/.vim/bundle/vim-rails"]
+	path = files/.vim/bundle/vim-rails
+	url = https://github.com/tpope/vim-rails.git
+[submodule "files/.vim/bundle/vim-ruby"]
+	path = files/.vim/bundle/vim-ruby
+	url = https://github.com/vim-ruby/vim-ruby.git
+[submodule "files/.vim/bundle/vimroom"]
+	path = files/.vim/bundle/vimroom
+	url = https://github.com/mikewest/vimroom.git
