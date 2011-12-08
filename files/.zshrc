@@ -40,6 +40,11 @@ export EDITOR=vim
 alias gfo='git fetch origin'
 alias gsu='git submodule update'
 alias b='git checkout -b'
+alias glog='git log --pretty="format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset"'
+alias gl='glog --graph'
+alias gm='git merge --no-ff'
+alias gmf='git merge --ff-only'
+alias gs='git show'
 
 # Don't show ~rvm_rvmrc_cwd as path when using rvm
 unsetopt AUTO_NAME_DIRS
