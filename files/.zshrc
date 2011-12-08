@@ -79,3 +79,5 @@ alias rc='rails console'
 alias rs='rails server thin'
 
 alias gmom='git merge origin/master'
+
+alias markdown='kramdown'
