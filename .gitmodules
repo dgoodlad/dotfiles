@@ -43,3 +43,6 @@
 [submodule "files/.vim/bundle/vimroom"]
 	path = files/.vim/bundle/vimroom
 	url = https://github.com/mikewest/vimroom.git
+[submodule "files/.vim/bundle/ctrlp"]
+	path = files/.vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim.git
