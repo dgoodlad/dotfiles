@@ -24,6 +24,9 @@ set wildmenu
 " Use emacs-style tab completion when selecting files, etc.
 set wildmode=longest,list
 
+" Ignore SCM files
+set wildignore+=*/.git/*
+
 " Make searches case-sensitive only if they contain upper-case characters
 set ignorecase
 set smartcase
