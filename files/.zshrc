@@ -46,6 +46,7 @@ alias gm='git merge --no-ff'
 alias gmf='git merge --ff-only'
 alias gs='git show'
 alias gst='git status -b -s'
+alias gap='git add -p'
 
 # Don't show ~rvm_rvmrc_cwd as path when using rvm
 unsetopt AUTO_NAME_DIRS
