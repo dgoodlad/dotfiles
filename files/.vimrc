@@ -245,3 +245,8 @@ map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 
 " Map leader-leader to switch between the two most recent buffers
 nnoremap <leader><leader> <c-^>
+
+" Setup vimroom
+let g:vimroom_scrolloff=5
+let g:vimroom_sidebar_height=3
+let g:vimroom_width=80
