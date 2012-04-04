@@ -49,3 +49,9 @@
 [submodule "files/.vim/bundle/vim-javascript-syntax"]
 	path = files/.vim/bundle/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax.git
+[submodule "files/.vim/bundle/vim-turbux"]
+	path = files/.vim/bundle/vim-turbux
+	url = https://github.com/jgdavey/vim-turbux.git
+[submodule "files/.zsh-syntax-highlighting"]
+	path = files/.zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
