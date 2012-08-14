@@ -55,3 +55,6 @@
 [submodule "files/.zsh-syntax-highlighting"]
 	path = files/.zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "files/.vim/bundle/vitality"]
+	path = files/.vim/bundle/vitality
+	url = https://github.com/sjl/vitality.vim.git
