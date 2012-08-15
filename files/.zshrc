@@ -63,6 +63,8 @@ setopt nullglob
 if [[ -d $HOME/.rbenv/bin ]] ; then
     export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)"
+else
+    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
 # Node Version Manager
