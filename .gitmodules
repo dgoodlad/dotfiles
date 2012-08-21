@@ -58,3 +58,6 @@
 [submodule "files/.vim/bundle/vitality"]
 	path = files/.vim/bundle/vitality
 	url = https://github.com/sjl/vitality.vim.git
+[submodule "files/.vim/bundle/vim-slime"]
+	path = files/.vim/bundle/vim-slime
+	url = https://github.com/jpalardy/vim-slime.git
