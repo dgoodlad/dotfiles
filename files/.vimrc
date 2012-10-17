@@ -1,6 +1,31 @@
 let mapleader=','
 
-call pathogen#infect()
+"call pathogen#infect()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'kien/ctrlp.vim'
+Bundle 'sjbach/lusty'
+Bundle 'mileszs/ack.vim'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-git'
+Bundle 'tpope/vim-haml'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'mikewest/vimroom'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'jgdavey/vim-turbux'
+Bundle 'sjl/vitality.vim'
+Bundle 'jpalardy/vim-slime'
+Bundle 'peterhoeg/vim-tmux'
+Bundle 'kikijump/tslime.vim'
 
 " When started as "evim", evim will already have done these settings
 if v:progname =~? "evim"
