@@ -26,6 +26,7 @@ Bundle 'sjl/vitality.vim'
 Bundle 'jpalardy/vim-slime'
 Bundle 'peterhoeg/vim-tmux'
 Bundle 'kikijump/tslime.vim'
+Bundle 'rodjek/vim-puppet'
 
 " When started as "evim", evim will already have done these settings
 if v:progname =~? "evim"
