@@ -39,6 +39,12 @@ export MANPATH
 
 export EDITOR=vim
 
+# vi style incremental search
+bindkey '^R' history-incremental-search-backward
+bindkey '^S' history-incremental-search-forward
+bindkey '^P' history-search-backward
+bindkey '^N' history-search-forward
+
 # Git aliases
 alias gfo='git fetch origin'
 alias gsu='git submodule update'
