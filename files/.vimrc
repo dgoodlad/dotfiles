@@ -271,6 +271,10 @@ map <leader>F :CommandTFlush<cr>\|:CommandT %%<cr>
 " Map leader-leader to switch between the two most recent buffers
 nnoremap <leader><leader> <c-^>
 
+" Use git ls-files for ControlP, it's way faster
+" This will fall back to globpath if there's no .git
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files']
+
 " Setup vimroom
 let g:vimroom_scrolloff=5
 let g:vimroom_sidebar_height=3
