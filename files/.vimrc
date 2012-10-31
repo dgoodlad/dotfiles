@@ -80,7 +80,7 @@ if &t_Co > 2 || has("gui_running")
 
   let g:solarized_termtrans=0
   let g:solarized_visibility='low'
-  set background=dark
+  set background=light
   colorscheme solarized
 endif
 
