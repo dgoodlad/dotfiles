@@ -57,6 +57,10 @@ alias gs='git show'
 alias gst='git status -b -s'
 alias gap='git add -p'
 
+if [[ -x `which hub` ]]; then
+    alias git=hub
+fi
+
 # Don't show ~rvm_rvmrc_cwd as path when using rvm
 unsetopt AUTO_NAME_DIRS
 # Also required for rvm
