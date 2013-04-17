@@ -98,3 +98,5 @@ alias rs='rails server thin'
 alias gmom='git merge origin/master'
 
 alias markdown='kramdown'
+
+[[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
