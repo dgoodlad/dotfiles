@@ -135,7 +135,7 @@ set editor = "vim"        # Use terminal Vim to compose email.
 set from = "david@goodlad.net"
 set sendmail = "msmtp -a dgoodlad"
 set sendmail_wait = 0
-set record
+set record = "=sent"
 
 bind compose p postpone-message
 bind index p recall-message
