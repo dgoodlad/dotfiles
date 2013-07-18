@@ -1,0 +1,39 @@
+[general]
+ui = ttyui
+accounts = dgoodlad
+pythonfile=~/.mutt/offlineimap.py
+fsync = False
+
+[Account dgoodlad]
+localrepository = dgoodlad-Local
+remoterepository = dgoodlad-Remote
+status_backend = sqlite
+postsynchook = notmuch new
+
+[Repository dgoodlad-Local]
+type = Maildir
+localfolders = ~/.mail/david-goodlad.net
+nametrans = lambda folder: {'drafts':  'Drafts',
+                            'sent':    'Sent Messages',
+                            'trash':   'Deleted Messages',
+                            'archive': 'Archive',
+                            }.get(folder, folder)
+
+[Repository dgoodlad-Remote]
+maxconnections = 3
+type = IMAP
+remotehost = panorama.goodlad.net
+remoteuser = dave
+remotepasseval = get_keychain_pass(account="david@goodlad.net", server="panorama.goodlad.net")
+ssl = yes
+cert_fingerprint = e773d1b9588def867f1224a850e87c08d2b15524
+realdelete = no
+nametrans = lambda folder: {'Drafts':           'drafts',
+                            'Sent Messages':    'sent',
+                            'Deleted Messages': 'trash',
+                            'Archive':          'archive',
+                            }.get(folder, folder)
+folderfilter = lambda folder: folder not in ['Mailing Lists',
+                                             'Mailing Lists.CouchDB',
+                                             'Mailing Lists.Nodejs',
+                                             'Deleted Messages',]
