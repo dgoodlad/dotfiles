@@ -35,12 +35,12 @@ bind down:ctrl;alt;cmd   push down  bar-resize:screenSizeY/2
 #bind down:ctrl;alt;cmd  throw down  resize
 
 # Focus Bindings
-bind right:cmd    focus right
-bind left:cmd     focus left
-bind up:cmd       focus up
-bind down:cmd     focus down
-bind up:cmd;alt   focus behind
-bind down:cmd;alt focus behind
+#bind right:cmd    focus right
+#bind left:cmd     focus left
+#bind up:cmd       focus up
+#bind down:cmd     focus down
+#bind up:cmd;alt   focus behind
+#bind down:cmd;alt focus behind
 
 # Window Hints
 bind esc:cmd hint
