@@ -208,6 +208,8 @@ augroup myfiletypes
   "autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
 augroup END
 
+let ruby_no_expensive=1
+
 " Map ,e and ,v to open files in the same directory as the current file
 cnoremap %% <C-R>=expand('%:h').'/'<cr>
 map <leader>e :edit %%
