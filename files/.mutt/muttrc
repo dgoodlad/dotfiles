@@ -1,5 +1,5 @@
 # Paths ----------------------------------------------
-set folder           = ~/.mail/david-goodlad.net # mailbox location
+set folder           = ~/.mail/github            # mailbox location
 set alias_file       = ~/.mutt/alias             # where to store aliases
 set header_cache     = ~/.mutt/cache/headers     # where to store headers
 set message_cachedir = ~/.mutt/cache/bodies      # where to store bodies
@@ -23,10 +23,10 @@ set pipe_decode          # strip headers and eval mimes when piping
 set thorough_search      # strip headers and eval mimes before searching
 
 # Sidebar Patch --------------------------------------
-set sidebar_delim   = '  │'
-set sidebar_visible = yes
-set sidebar_width   = 24
-color sidebar_new color221 color233
+#set sidebar_delim   = '  │'
+#set sidebar_visible = yes
+#set sidebar_width   = 24
+#color sidebar_new color221 color233
 
 # Status Bar -----------------------------------------
 set status_chars  = " *%A"
@@ -35,6 +35,7 @@ set status_format = "───[ Folder: %f ]───[%r%m messages%?n? (%n new)
 # Header Options -------------------------------------
 ignore *                                # ignore all headers
 unignore from: to: cc: date: subject:   # show only these
+unignore list-id: x-github-reason:      # and these, for filtering
 unhdr_order *                           # some distros order things by default
 hdr_order from: to: cc: date: subject:  # and in this order
 
@@ -44,23 +45,20 @@ hdr_order from: to: cc: date: subject:  # and in this order
 set spoolfile = "+INBOX"
 
 # Alternate email addresses.
-alternates david@goodlad.ca dave@goodlad.net dgoodlad@gmail.com
+alternates dgoodlad@github.com david.goodlad@github.com
 
 # Mailboxes to show in the sidebar.
-mailboxes +INBOX \
-          +archive \
-          +sent \
-          +drafts \
+mailboxes +INBOX
 
 # Other special folders.
 set mbox      = "+archive"
 set postponed = "+drafts"
 
 # Index View Options ---------------------------------
-set date_format = "%m/%d"
+set date_format = "%m/%d %H:%M"
 set index_format = "[%Z]  %D  %-20.20F  %s"
 set sort = threads                         # like gmail
-set sort_aux = reverse-last-date-received  # like gmail
+set sort_aux = last-date-received  # like gmail
 set uncollapse_jump                        # don't collapse on an unread message
 set sort_re                                # thread based on regex
 set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
@@ -77,17 +75,21 @@ bind index <space>  collapse-thread
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
 
 # Sync email
-macro index O "<shell-escape>offlineimap<enter>"           "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
+macro index O "<shell-escape>mbsync -a<enter>"           "run offlineimap to sync all mail"
+macro index o "<shell-escape>mbsync GitHub-default:INBOX<enter>" "run offlineimap to sync inbox"
 
 # Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
+# Mute a thread
+macro index <esc>m "<enter-command>unset pipe_decode<enter><pipe-message>github-mute.sh<enter><enter-command>set pipe_decode<enter>"             "mute a github thread"
+macro index <esc>M "<enter-command>unset pipe_decode<enter><tag-prefix><pipe-message>github-mute.sh<enter><enter-command>set pipe_decode<enter>" "mute tagged threads"
+
 # Sidebar Navigation ---------------------------------
-bind index,pager <down>   sidebar-next
-bind index,pager <up>     sidebar-prev
-bind index,pager <right>  sidebar-open
+#bind index,pager <down>   sidebar-next
+#bind index,pager <up>     sidebar-prev
+#bind index,pager <right>  sidebar-open
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show
@@ -133,8 +135,9 @@ set forward_quote                    # include message in forwards
 
 set editor = "vim"        # Use terminal Vim to compose email.
 
-set from = "david@goodlad.net"
-set sendmail = "msmtp -a dgoodlad"
+set sendmail = "msmtp -a github"
+set use_from = yes
+set from = "dgoodlad@github.com"
 set sendmail_wait = 0
 set record = "=sent"
 
