@@ -1,0 +1,44 @@
+IMAPAccount GitHub
+Host imap.gmail.com
+Port 993
+User david.goodlad@github.com
+PassCmd "~/bin/mailpass GitHub Mail"
+UseIMAPS yes
+UseTLSv1.2 yes
+CertificateFile ~/.mutt/gmail.crt
+
+IMAPStore GitHub-remote
+Account GitHub
+
+MaildirStore GitHub-local
+Path ~/.mail/github/
+Inbox ~/.mail/github/INBOX
+# Trash ~/.mail/github/[Gmail].Bin
+
+Channel GitHub-default
+Master :GitHub-remote:
+Slave :GitHub-local:
+Patterns "INBOX"
+Create Slave
+Expunge Both
+SyncState *
+
+Channel GitHub-sent
+Master :GitHub-remote:"[Gmail]/Sent Mail"
+Slave :GitHub-local:sent
+Create Slave
+
+Channel GitHub-sent
+Master :GitHub-remote:"[Gmail]/Trash"
+Slave :GitHub-local:trash
+Create Slave
+
+Channel GitHub-drafts
+Master :GitHub-remote:"[Gmail]/Drafts"
+Slave :GitHub-local:drafts
+Create Slave
+
+Channel GitHub-archive
+Master :GitHub-remote:"[Gmail]/All Mail"
+Slave :GitHub-local:archive
+Create Slave
