@@ -82,9 +82,9 @@ macro index o "<shell-escape>mbsync GitHub-default:INBOX<enter>" "run offlineima
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
-# Mute a thread
-macro index <esc>m "<enter-command>unset pipe_decode<enter><pipe-message>github-mute.sh<enter><enter-command>set pipe_decode<enter>"             "mute a github thread"
-macro index <esc>M "<enter-command>unset pipe_decode<enter><tag-prefix><pipe-message>github-mute.sh<enter><enter-command>set pipe_decode<enter>" "mute tagged threads"
+# Mute and delete threads
+macro index <esc>m "<enter-command>unset pipe_decode<enter><pipe-message>github-mute.sh<enter><enter-command>set pipe_decode<enter><delete-thread>"             "mute a github thread"
+macro index <esc>M "<enter-command>unset pipe_decode<enter><tag-prefix><pipe-message>github-mute.sh<enter><enter-command>set pipe_decode<enter><tag-prefix><delete-thread>" "mute tagged threads"
 
 # Sidebar Navigation ---------------------------------
 #bind index,pager <down>   sidebar-next
