@@ -99,4 +99,23 @@ alias gmom='git merge origin/master'
 
 alias markdown='kramdown'
 
+# Tmux aliases
+
+function tmux_win() {
+    name=$1
+    cwd=$2
+
+    if ! tmux find-window -N $name; then
+        tmux new-window -c $cwd -n $name
+    fi
+}
+
+function boxen_project() {
+  name=$1
+  dir="${HOME}/src/boxen/${name}"
+
+  [[ ! -d $dir ]] && git clone https://github.com/boxen/${name} $dir
+  cd $dir
+}
+
 [[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
