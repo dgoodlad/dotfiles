@@ -171,4 +171,4 @@ folder-hook 'archive' 'macro index \ed <delete-thread>  "Delete Thread"'
 folder-hook 'archive' 'macro pager d   <delete-message> "Delete Message"'
 folder-hook 'archive' 'macro pager d   <delete-message> "Delete Message"'
 
-source ~/.mutt/solarized/mutt-colors-solarized-dark-16.muttrc
+source ~/.mutt/zenburn.muttrc
