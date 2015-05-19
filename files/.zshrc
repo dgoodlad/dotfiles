@@ -37,7 +37,9 @@ MANPATH=/usr/local/man:$MANPATH
 export PATH
 export MANPATH
 
-export EDITOR=vim
+alias es='/Applications/Emacs.app/Contents/MacOS/Emacs --daemon'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c -n'
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c'
 
 # vi style incremental search
 bindkey '^R' history-incremental-search-backward
