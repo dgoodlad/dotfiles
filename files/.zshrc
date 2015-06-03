@@ -38,8 +38,8 @@ export PATH
 export MANPATH
 
 alias es='/Applications/Emacs.app/Contents/MacOS/Emacs --daemon'
-alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c -n'
-export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -c'
+alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw'
+export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -a "" -nw'
 
 # vi style incremental search
 bindkey '^R' history-incremental-search-backward
