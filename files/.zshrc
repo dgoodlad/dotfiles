@@ -64,6 +64,7 @@ alias gmf='git merge --ff-only'
 alias gs='git show'
 alias gst='git status -b -s'
 alias gap='git add -p'
+alias git-cleanup="git branch --merged origin/master | grep -v \"master\" | grep -v '*' | xargs git branch -d"
 
 if [[ -x `which hub` ]]; then
     alias git=hub
