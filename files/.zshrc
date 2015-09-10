@@ -37,9 +37,15 @@ MANPATH=/usr/local/man:$MANPATH
 export PATH
 export MANPATH
 
-alias es='/Applications/Emacs.app/Contents/MacOS/Emacs --daemon'
-alias emacs='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -nw'
-export EDITOR='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -a "" -nw'
+if [ -d /Applications/Emacs.app ]; then
+    EMACS='/Applications/Emacs.app'
+else
+    EMACS='/Users/dgoodlad/Applications/Emacs.app'
+fi
+
+alias es="${EMACS}/Contents/MacOS/Emacs --daemon"
+alias emacs="${EMACS}/Contents/MacOS/bin/emacsclient -nw"
+export EDITOR="${EMACS}/Contents/MacOS/bin/emacsclient -a '' -nw"
 
 # vi style incremental search
 bindkey '^R' history-incremental-search-backward
@@ -77,6 +83,11 @@ if [[ -d $HOME/.rbenv/bin ]] ; then
     eval "$(rbenv init -)"
 else
     if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+fi
+
+# chruby
+if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]]; then
+    source /usr/local/opt/chruby/share/chruby/chruby.sh
 fi
 
 # Node Version Manager
