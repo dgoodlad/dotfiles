@@ -167,8 +167,20 @@ before layers configuration."
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
-  (with-eval-after-load 'flycheck
-    (flycheck-add-mode 'javascript-standard 'react-mode))
+  (spacemacs|use-package-add-hook js2-mode
+    :post-config
+    (progn
+      (setq-default
+       js2-strict-missing-semi-warning nil
+       js2-basic-offset 2)
+      ))
+  (spacemacs|use-package-add-hook flycheck
+    :post-config
+    (progn
+      (flycheck-add-mode 'javascript-standard 'react-mode)
+      (setq-default
+       flycheck-disabled-checkers (append flycheck-disabled-checkers
+                                          '(javascript-eslint)))))
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
