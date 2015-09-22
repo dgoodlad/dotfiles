@@ -166,13 +166,16 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (setq-default web-mode-code-indent-offset 2)
   (add-to-list 'auto-mode-alist '("\\.js\\'" . react-mode))
   (spacemacs|use-package-add-hook js2-mode
     :post-config
     (progn
       (setq-default
        js2-strict-missing-semi-warning nil
-       js2-basic-offset 2)
+       js2-basic-offset 2
+       js2-bounce-indent-p t
+       js-indent-level 2)
       ))
   (spacemacs|use-package-add-hook flycheck
     :post-config
@@ -196,6 +199,7 @@ layers configuration."
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
  '(js2-basic-offset 2)
+ '(paradox-github-token t)
  '(ring-bell-function (quote ignore) t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
