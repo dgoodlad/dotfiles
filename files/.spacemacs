@@ -198,7 +198,9 @@ layers configuration."
  '(ahs-idle-interval 0.25)
  '(ahs-idle-timer 0 t)
  '(ahs-inhibit-face-list nil)
+ '(js-indent-level 2)
  '(js2-basic-offset 2)
+ '(json-reformat:indent-width 2)
  '(paradox-github-token t)
  '(ring-bell-function (quote ignore) t))
 (custom-set-faces
