@@ -91,6 +91,11 @@ if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]]; then
     source /usr/local/opt/chruby/share/chruby/chruby.sh
 fi
 
+# nodenv
+if [[ -d $HOME/.nodenv ]] ; then
+    eval "$(nodenv init -)"
+fi
+
 # Node Version Manager
 #if [[ -s $HOME/.nvm ]] ; then
 #  NVM_DIR=$HOME/.nvm
