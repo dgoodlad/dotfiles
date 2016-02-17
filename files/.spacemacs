@@ -29,6 +29,7 @@ values."
      dockerfile
      emacs-lisp
      git
+     go
      markdown
      osx
      react
@@ -234,7 +235,8 @@ layers configuration. You are free to put any user code."
        flycheck-disabled-checkers (append flycheck-disabled-checkers
                                           '(javascript-eslint)))))
   (require 'chruby)
-  (chruby "2.2.3")
+  (chruby "2.2.4")
+  (setq clojure-enable-fancify-symbols t)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
