@@ -39,13 +39,19 @@ export MANPATH
 
 if [ -d /Applications/Emacs.app ]; then
     EMACS='/Applications/Emacs.app'
-else
+elif [ -d /Users/dgoodlad/Applications/Emacs.app ]; then
     EMACS='/Users/dgoodlad/Applications/Emacs.app'
 fi
 
+if [ -f "${EMACS}/Contents/MacOS/bin/emacsclient" ]; then
+    EMACSCLIENT="${EMACS}/Contents/MacOS/bin/emacsclient"
+else
+    EMACSCLIENT=$(which emacsclient)
+fi
+
 alias es="${EMACS}/Contents/MacOS/Emacs --daemon"
-alias emacs="${EMACS}/Contents/MacOS/bin/emacsclient -nw"
-export EDITOR="${EMACS}/Contents/MacOS/bin/emacsclient -a '' -nw"
+alias emacs="${EMACSCLIENT} -nw"
+export EDITOR="${EMACSCLIENT} -a '' -nw"
 
 # vi style incremental search
 bindkey '^R' history-incremental-search-backward
