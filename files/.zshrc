@@ -143,4 +143,6 @@ function boxen_project() {
   cd $dir
 }
 
+[[ -d $HOME/src/go ]] && export GOPATH=$HOME/src/go && export PATH=$PATH:$GOPATH/bin
+
 [[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
