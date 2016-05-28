@@ -43,6 +43,7 @@ brew 'tree'
 brew 'watch'
 brew 'xz'
 brew 'zsh'
+brew 'zsh-syntax-highlighting'
 
 # OS X apps via homebrew cask
 cask 'alfred'

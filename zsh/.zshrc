@@ -113,4 +113,7 @@ function boxen_project() {
   cd $dir
 }
 
+[[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 [[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
