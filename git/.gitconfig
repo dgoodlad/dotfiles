@@ -1,0 +1,9 @@
+[user]
+	name = David Goodlad
+	email = david@goodlad.net
+[github]
+	user = dgoodlad
+[pull]
+	ff = only
+[push]
+	default = simple

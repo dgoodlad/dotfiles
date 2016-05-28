@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<string>/Users/dave/.rbenv/shims:/Users/dave/.rbenv/bin:/Users/dave/bin:/opt/local/lib/mysql5/bin:/opt/local/bin:/opt/local/sbin:/usr/X11/bin:/usr/X11/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin</string>
+</plist>

@@ -1,0 +1,5 @@
+set bell-style visible
+set editing-mode vi
+set history-preserve-point On
+set show-all-if-ambiguous On
+
