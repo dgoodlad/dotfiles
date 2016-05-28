@@ -8,13 +8,18 @@ log()   { echo "--> $*"; }
 logn()  { printf -- "--> $* "; }
 logk()  { echo "OK"; }
 
+readonly dotfiles="${HOME}/.dotfiles"
+if [[ ! -d $dotfiles ]]; then
+    log "Cloning dotfiles:"
+    git clone https://github.com/dgoodlad/dotfiles $dotfiles
+    logk
+fi
+
 which stow 2>&1 >/dev/null || {
-    echo "Missing GNU stow; please install it then re-run $0"
-    echo "On OS X: brew install stow"
-    exit 1
+    abort "Missing GNU stow; please install it then re-run $0"
 }
 
-pushd $(dirname $0)
+pushd ${dotfiles} >/dev/null
 
 log "Installing OS-independent dotfiles:"
 stow emacs
@@ -50,3 +55,5 @@ else
     stow awesome
 fi
 logk
+
+popd >/dev/null
