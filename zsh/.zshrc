@@ -105,14 +105,6 @@ function tmux_win() {
     fi
 }
 
-function boxen_project() {
-  name=$1
-  dir="${HOME}/src/boxen/${name}"
-
-  [[ ! -d $dir ]] && git clone https://github.com/boxen/${name} $dir
-  cd $dir
-}
-
 [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
