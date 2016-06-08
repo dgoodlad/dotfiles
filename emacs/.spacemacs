@@ -29,6 +29,7 @@ values."
      better-defaults
      clojure
      dockerfile
+     elixir
      emacs-lisp
      (git :variables
           magit-repository-directories '("~/src/")
