@@ -16,7 +16,11 @@ if [[ ! -d $dotfiles ]]; then
 fi
 
 which stow 2>&1 >/dev/null || {
-    abort "Missing GNU stow; please install it then re-run $0"
+    if (which brew 2>&1 >/dev/null); then
+        brew install stow
+    else
+        abort "Missing GNU stow; please install it then re-run $0"
+    fi
 }
 
 pushd ${dotfiles} >/dev/null
