@@ -70,6 +70,4 @@ mas 'Quiver', id: 866773894
 mas 'Slack', id: 803453959
 mas 'Tweetbot', id: 557168941
 mas 'WiFi Explorer', id: 494803304
-mas 'Xcode', id: 497799835
-mas 'YubiKey Personalization Tool', id: 638161122
 
