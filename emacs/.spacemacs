@@ -252,6 +252,7 @@ layers configuration. You are free to put any user code."
   (chruby "2.3.1")
   (setq clojure-enable-fancify-symbols t)
   (setq powerline-default-separator 'utf-8)
+  (spaceline-compile)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
