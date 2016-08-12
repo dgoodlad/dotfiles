@@ -13,3 +13,5 @@
 	log = diff-highlight | less
 	show = diff-highlight | less
 	diff = diff-highlight | less
+[alias]
+	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
