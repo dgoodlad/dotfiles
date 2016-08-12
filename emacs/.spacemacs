@@ -27,10 +27,13 @@ values."
                       auto-completion-enable-help-tooltip t
                       auto-completion-enable-sort-by-usage t)
      better-defaults
+     (c-c++ :variables
+            c-c++-enable-clang-support t)
      clojure
      dockerfile
      elixir
      emacs-lisp
+     extra-langs
      (git :variables
           magit-repository-directories '("~/src/")
           global-git-commit-mode t)
