@@ -8,6 +8,14 @@ export PATH
 [ -d /usr/local/share/man ] && MANPATH=/usr/local/share/man:$MANPATH
 export MANPATH
 
+# gpg-agent
+[ -f ~/.gpg-agent-info ] && source ~/.gpg-agent-info
+if [ -S "${GPG_AGENT_INFO%%:*}" ]; then
+    export GPG_AGENT_INFO
+else
+    eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
+fi
+
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]] ; then
     export PATH="$HOME/.rbenv/bin:$PATH"
