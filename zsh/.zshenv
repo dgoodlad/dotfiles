@@ -23,7 +23,7 @@ if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]]; then
 fi
 
 # nodenv
-if [[ -d $HOME/.nodenv ]] ; then
+if which nodenv > /dev/null; then
     eval "$(nodenv init -)"
 fi
 
