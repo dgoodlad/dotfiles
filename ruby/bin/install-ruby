@@ -1,0 +1,36 @@
+#!/bin/bash
+
+set -o nounset
+set -o pipefail
+set -o errexit
+
+usage () {
+    echo "Usage: $0 <version>" >&2
+    echo "" >&2
+    echo "  Run 'ruby-build --definitions' for available versions" >&2
+}
+
+readonly rubies=${RUBIES:-${HOME}/.rubies}
+readonly version=${1:-}
+readonly prefix="${rubies}/${version}"
+
+if [[ -z "${version}" ]]; then
+    usage
+    exit 1
+fi
+
+[[ -d "${rubies}" ]] || mkdir -p "${rubies}"
+
+[[ -d "${prefix}" ]] && {
+    echo "Ruby ${version} already installed at ${prefix}"
+    echo "To re-install, remove that directory and re-run"
+    exit 2
+}
+
+ruby-build --definitions | grep --quiet $version 2>&1 >/dev/null || {
+    usage
+    exit 1
+}
+
+echo "Installing Ruby ${version} to ${prefix}"
+ruby-build "$version" "$prefix"
