@@ -49,6 +49,7 @@ brew 'zsh-syntax-highlighting'
 # OS X apps via homebrew cask
 cask 'alfred'
 cask 'aws-vault'
+cask 'docker'
 cask 'google-chrome'
 cask 'istat-menus'
 cask 'licecap'
