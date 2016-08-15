@@ -20,6 +20,7 @@ brew 'heroku'
 brew 'htop-osx'
 brew 'imapsync'
 brew 'jq'
+brew 'leiningen'
 brew 'libffi'
 brew 'mutt', args: ['with-confirm-attachment-patch', 'with-gpgme', 'with-s-lang']
 brew 'nmap'
