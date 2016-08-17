@@ -1,9 +1,12 @@
 cask_args appdir: '/Applications'
 
+tap 'Goles/battery'
+
 # Regular homebrew apps
 brew 'autoconf'
 brew 'automake'
 brew 'awscli'
+brew 'battery'
 brew 'chruby'
 brew 'coreutils'
 brew 'elixir'
