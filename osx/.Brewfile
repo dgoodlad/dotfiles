@@ -66,17 +66,17 @@ cask 'things'
 cask 'vlc'
 
 # Mac App Store apps
-brew 'mas'
-mas '1Password', id: 443987910
-mas 'Caffeine', id: 411246225
-mas 'Dash', id: 458034879
-mas 'iA Writer', id: 439623248
-mas 'Monosnap', id: 540348655
-mas 'Patterns', id: 429449079
-mas 'Pixelmator', id: 407963104
-mas 'Pixen', id: 525180431
-mas 'Quiver', id: 866773894
-mas 'Slack', id: 803453959
-mas 'Tweetbot', id: 557168941
-mas 'WiFi Explorer', id: 494803304
-
+#brew 'mas'
+#mas '1Password', id: 443987910
+#mas 'Caffeine', id: 411246225
+#mas 'Dash', id: 458034879
+#mas 'iA Writer', id: 439623248
+#mas 'Monosnap', id: 540348655
+#mas 'Patterns', id: 429449079
+#mas 'Pixelmator', id: 407963104
+#mas 'Pixen', id: 525180431
+#mas 'Quiver', id: 866773894
+#mas 'Slack', id: 803453959
+#mas 'Tweetbot', id: 557168941
+#mas 'WiFi Explorer', id: 494803304
+#
