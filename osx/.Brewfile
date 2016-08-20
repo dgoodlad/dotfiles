@@ -1,6 +1,7 @@
 cask_args appdir: '/Applications'
 
 tap 'Goles/battery'
+tap 'railwaycat/emacsmacport'
 
 # Regular homebrew apps
 brew 'autoconf'
@@ -10,7 +11,7 @@ brew 'battery'
 brew 'chruby'
 #brew 'coreutils' # broken in macOS Sierra
 brew 'elixir'
-brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-imagemagick']
+#brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-imagemagick']
 brew 'exiftool'
 brew 'gettext'
 brew 'gnupg'
@@ -53,6 +54,7 @@ brew 'zsh-syntax-highlighting'
 #cask 'alfred' # broken in macOS Sierra
 cask 'aws-vault'
 cask 'docker'
+cask 'emacs-mac'
 cask 'google-chrome'
 cask 'istat-menus'
 cask 'licecap'
