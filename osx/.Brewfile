@@ -8,7 +8,7 @@ brew 'automake'
 brew 'awscli'
 brew 'battery'
 brew 'chruby'
-brew 'coreutils'
+#brew 'coreutils' # broken in macOS Sierra
 brew 'elixir'
 brew 'emacs', args: ['with-cocoa', 'with-gnutls', 'with-imagemagick']
 brew 'exiftool'
@@ -50,14 +50,14 @@ brew 'zsh'
 brew 'zsh-syntax-highlighting'
 
 # OS X apps via homebrew cask
-cask 'alfred'
+#cask 'alfred' # broken in macOS Sierra
 cask 'aws-vault'
 cask 'docker'
 cask 'google-chrome'
 cask 'istat-menus'
 cask 'licecap'
 cask 'monodraw'
-cask 'sizeup'
+#cask 'sizeup' # broken in macOS Sierra
 cask 'sketch'
 cask 'sonos'
 cask 'things'

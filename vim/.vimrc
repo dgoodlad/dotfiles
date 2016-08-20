@@ -1,43 +1,43 @@
-let mapleader=','
+set nocompatible
+filetype off
 
-"call pathogen#infect()
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
-Bundle 'kien/ctrlp.vim'
-Bundle 'sjbach/lusty'
-Bundle 'mileszs/ack.vim'
-Bundle 'goldfeld/vim-seek'
-Bundle 'tpope/vim-surround'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-git'
-Bundle 'tpope/vim-haml'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-rails'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'mikewest/vimroom'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'jgdavey/vim-turbux'
-Bundle 'jpalardy/vim-slime'
-Bundle 'guns/vim-clojure-static'
-Bundle 'peterhoeg/vim-tmux'
-Bundle 'kikijump/tslime.vim'
-Bundle 'rodjek/vim-puppet'
+Plugin 'kien/ctrlp.vim'
+Plugin 'sjbach/lusty'
+Plugin 'mileszs/ack.vim'
+Plugin 'goldfeld/vim-seek'
+Plugin 'tpope/vim-surround'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-haml'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-rails'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'mikewest/vimroom'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'jgdavey/vim-turbux'
+Plugin 'jpalardy/vim-slime'
+Plugin 'guns/vim-clojure-static'
+Plugin 'peterhoeg/vim-tmux'
+"Plugin 'kikijump/tslime.vim'
+Plugin 'rodjek/vim-puppet'
 
-" When started as "evim", evim will already have done these settings
-if v:progname =~? "evim"
-  finish
-endif
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+
+let mapleader=','
 
 " Allow backgrounding buffers without writing them, and remember marks/undo
 " for backgrounded buffers

@@ -50,6 +50,13 @@ if [ ! -d $HOME/.oh-my-zsh ]; then
     logk
 fi
 
+if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
+    log "Installing Vundle.vim:"
+    git clone https://github.com/VundleVim/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
+    vim +PluginInstall +qall
+    logk
+fi
+
 readonly os=$(uname -s)
 log "Installing dotfiles for ${os}"
 if [[ "${os}" == "Darwin" ]]; then
