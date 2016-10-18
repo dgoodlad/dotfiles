@@ -108,4 +108,13 @@ function tmux_win() {
 [[ -f /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]] && \
     source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# aws-vault
+
+alias av='aws-vault'
+ave() {
+    aws-vault exec $1 -- "${@:2}"
+}
+
+# Boxen
+
 [[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
