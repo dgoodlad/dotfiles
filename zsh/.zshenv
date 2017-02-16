@@ -30,6 +30,9 @@ fi
 if [[ -f /usr/local/opt/chruby/share/chruby/chruby.sh ]]; then
     source /usr/local/opt/chruby/share/chruby/chruby.sh
     source /usr/local/opt/chruby/share/chruby/auto.sh
+elif [[ -f /usr/share/chruby/chruby.sh ]]; then
+    source /usr/share/chruby/chruby.sh
+    source /usr/share/chruby/auto.sh
 fi
 
 # nodenv
