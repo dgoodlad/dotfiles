@@ -118,3 +118,9 @@ ave() {
 # Boxen
 
 [[ -f /opt/boxen/env.sh ]] && source /opt/boxen/env.sh
+
+# Terminix
+
+if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
