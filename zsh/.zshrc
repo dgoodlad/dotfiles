@@ -114,6 +114,19 @@ alias av='aws-vault'
 ave() {
     aws-vault exec $1 -- "${@:2}"
 }
+avs() {
+    local profile=$1
+    aws-vault exec $profile -- env PS1="\[aws ${profile}\] $ " $SHELL
+}
+
+# Fuck you touchbar
+
+fuckyoutouchbar() {
+    pkill "Touch Bar agent"
+    killall ControlStrip
+    echo ":boom: TouchBar"
+}
+alias fytb=fuckyoutouchbar
 
 # Boxen
 
