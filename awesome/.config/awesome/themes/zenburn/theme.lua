@@ -3,57 +3,35 @@
 --    By Adrian C. (anrxc)   --
 -------------------------------
 
--- Alternative icon sets and widget icons:
---  * http://awesome.naquadah.org/wiki/Nice_Icons
-
 -- {{{ Main
-theme = {}
-theme.wallpaper_cmd = { "awsetbg /usr/share/awesome/themes/zenburn/zenburn-background.png" }
--- }}}
-
--- {{{ Solarized color definitions
-colors = {}
-colors.base03   = "#002b36"
-colors.base02   = "#073642"
-colors.base01   = "#586e75"
-colors.base00   = "#657b83"
-colors.base0    = "#839496"
-colors.base1    = "#93a1a1"
-colors.base2    = "#eee8d5"
-colors.base3    = "#fdf6e3"
-colors.green    = "#b58900"
-colors.yellow   = "#cb4b16"
-colors.orange   = "#d30102"
-colors.red      = "#dc322f"
-colors.magenta  = "#6c71c4"
-colors.violet   = "#268bd2"
-colors.blue     = "#2aa198"
-colors.cyan     = "#859900"
-
+local theme = {}
+theme.wallpaper = "/usr/share/awesome/themes/zenburn/zenburn-background.png"
 -- }}}
 
 -- {{{ Styles
 theme.font      = "sans 8"
 
 -- {{{ Colors
-theme.fg_normal = colors.base0  -- "#DCDCCC"
-theme.fg_focus  = colors.base1  -- "#F0DFAF"
-theme.fg_urgent = colors.red    -- "#CC9393"
-theme.bg_normal = colors.base03 -- "#3F3F3F"
-theme.bg_focus  = colors.base02 -- "#1E2320"
-theme.bg_urgent = colors.base03 -- "#3F3F3F"
+theme.fg_normal  = "#DCDCCC"
+theme.fg_focus   = "#F0DFAF"
+theme.fg_urgent  = "#CC9393"
+theme.bg_normal  = "#3F3F3F"
+theme.bg_focus   = "#1E2320"
+theme.bg_urgent  = "#3F3F3F"
+theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = "1"
-theme.border_normal = colors.base01 -- "#3F3F3F"
-theme.border_focus  = colors.base1  -- "#6F6F6F"
-theme.border_marked = colors.blue   -- "#CC9393"
+theme.useless_gap   = 0
+theme.border_width  = 2
+theme.border_normal = "#3F3F3F"
+theme.border_focus  = "#6F6F6F"
+theme.border_marked = "#CC9393"
 -- }}}
 
 -- {{{ Titlebars
-theme.titlebar_bg_focus  = colors.base03 -- "#3F3F3F"
-theme.titlebar_bg_normal = colors.base03 -- "#3F3F3F"
+theme.titlebar_bg_focus  = "#3F3F3F"
+theme.titlebar_bg_normal = "#3F3F3F"
 -- }}}
 
 -- There are other variable sets
@@ -78,7 +56,7 @@ theme.titlebar_bg_normal = colors.base03 -- "#3F3F3F"
 -- }}}
 
 -- {{{ Mouse finder
-theme.mouse_finder_color = colors.green -- "#CC9393"
+theme.mouse_finder_color = "#CC9393"
 -- mouse_finder_[timeout|animate_timeout|radius|factor]
 -- }}}
 
@@ -86,8 +64,8 @@ theme.mouse_finder_color = colors.green -- "#CC9393"
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
 -- menu_[border_color|border_width]
-theme.menu_height = "15"
-theme.menu_width  = "100"
+theme.menu_height = 15
+theme.menu_width  = 100
 -- }}}
 
 -- {{{ Icons
@@ -100,7 +78,6 @@ theme.taglist_squares_unsel = "/usr/share/awesome/themes/zenburn/taglist/squarez
 -- {{{ Misc
 theme.awesome_icon           = "/usr/share/awesome/themes/zenburn/awesome-icon.png"
 theme.menu_submenu_icon      = "/usr/share/awesome/themes/default/submenu.png"
-theme.tasklist_floating_icon = "/usr/share/awesome/themes/default/tasklist/floatingw.png"
 -- }}}
 
 -- {{{ Layout
@@ -116,11 +93,18 @@ theme.layout_max        = "/usr/share/awesome/themes/zenburn/layouts/max.png"
 theme.layout_fullscreen = "/usr/share/awesome/themes/zenburn/layouts/fullscreen.png"
 theme.layout_magnifier  = "/usr/share/awesome/themes/zenburn/layouts/magnifier.png"
 theme.layout_floating   = "/usr/share/awesome/themes/zenburn/layouts/floating.png"
+theme.layout_cornernw   = "/usr/share/awesome/themes/zenburn/layouts/cornernw.png"
+theme.layout_cornerne   = "/usr/share/awesome/themes/zenburn/layouts/cornerne.png"
+theme.layout_cornersw   = "/usr/share/awesome/themes/zenburn/layouts/cornersw.png"
+theme.layout_cornerse   = "/usr/share/awesome/themes/zenburn/layouts/cornerse.png"
 -- }}}
 
 -- {{{ Titlebar
 theme.titlebar_close_button_focus  = "/usr/share/awesome/themes/zenburn/titlebar/close_focus.png"
 theme.titlebar_close_button_normal = "/usr/share/awesome/themes/zenburn/titlebar/close_normal.png"
+
+theme.titlebar_minimize_button_normal = "/usr/share/awesome/themes/default/titlebar/minimize_normal.png"
+theme.titlebar_minimize_button_focus  = "/usr/share/awesome/themes/default/titlebar/minimize_focus.png"
 
 theme.titlebar_ontop_button_focus_active  = "/usr/share/awesome/themes/zenburn/titlebar/ontop_focus_active.png"
 theme.titlebar_ontop_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/ontop_normal_active.png"
@@ -145,3 +129,5 @@ theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zen
 -- }}}
 
 return theme
+
+-- vim: filetype=lua:expandtab:shiftwidth=4:tabstop=8:softtabstop=4:textwidth=80
