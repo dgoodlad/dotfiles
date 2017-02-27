@@ -17,3 +17,5 @@
 	serve = daemon --verbose --export-all --base-path=.git --reuseaddr --strict-paths .git/
 [remote]
 	pushDefault = origin
+[http "https://gopkg.in"]
+	followRedirects = true
