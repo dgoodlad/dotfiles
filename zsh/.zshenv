@@ -50,6 +50,6 @@ else
     EMACS='/Users/dgoodlad/Applications/Emacs.app'
 fi
 
-alias es="/usr/local/opt/emacs/bin/emacs --daemon"
-alias emacs="/usr/local/opt/emacs/bin/emacsclient -nw"
-export EDITOR="/usr/local/opt/emacs/bin/emacsclient -a '' -nw"
+alias es="/usr/bin/emacs --daemon"
+alias emacs="/usr/bin/emacsclient -nw"
+export EDITOR="/usr/bin/emacsclient -a '' -nw"
