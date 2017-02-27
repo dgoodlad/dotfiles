@@ -137,3 +137,8 @@ alias fytb=fuckyoutouchbar
 if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
+
+# GPG
+
+export GPG_TTY=$(tty)
+gpg-connect-agent updatestartuptty /bye >/dev/null

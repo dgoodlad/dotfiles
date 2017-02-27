@@ -15,8 +15,9 @@ export MANPATH
 #else
 #    eval $( gpg-agent --daemon --write-env-file ~/.gpg-agent-info )
 #fi
-gpgconf --launch gpg-agent
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gnupg/S.gpg-agent.ssh
+if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
+    gpgconf --launch gpg-agent
+fi
 
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]] ; then
