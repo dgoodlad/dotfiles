@@ -19,6 +19,21 @@ if ! pgrep -x -u "${USER}" gpg-agent >/dev/null 2>&1; then
     gpgconf --launch gpg-agent
 fi
 
+case $OSTYPE in
+    linux-gnu)
+        export AWS_VAULT_BACKEND=secret-service
+        ;;
+    darwin*)
+        export AWS_VAULT_BACKEND=keychain
+        ;;
+esac
+
+
+
+if [ -n "$DESKTOP_SESSION" ]; then
+    eval $(gnome-keyring-daemon --start --components=pkcs11,secrets)
+fi
+
 # rbenv
 if [[ -d $HOME/.rbenv/bin ]] ; then
     export PATH="$HOME/.rbenv/bin:$PATH"
@@ -44,12 +59,21 @@ fi
 export GOPATH=${HOME}/src/go
 export PATH=${GOPATH}/bin:$PATH
 
-if [ -d /Applications/Emacs.app ]; then
-    EMACS='/Applications/Emacs.app'
-else
-    EMACS='/Users/dgoodlad/Applications/Emacs.app'
-fi
-
-alias es="/usr/bin/emacs --daemon"
-alias emacs="/usr/bin/emacsclient -nw"
-export EDITOR="/usr/bin/emacsclient -a '' -nw"
+case $OSTYPE in
+    darwin*)
+        if [ -d /Applications/Emacs.app ]; then
+            EMACS='/Applications/Emacs.app'
+        else
+            EMACS='/Users/dgoodlad/Applications/Emacs.app'
+        fi
+        export EMACSCLIENT=$EMACS/Contents/MacOS/bin/emacsclient
+        alias emacsclient=$EMACSCLIENT
+        ;;
+    *)
+        export EMACSCLIENT=emacsclient
+        ;;
+esac
+alias ec="$EMACSCLIENT -c -n"
+export EDITOR="$EMACSCLIENT -c"
+export ALTERNATE_EDITOR="/usr/bin/vim"
+export VISUAL=$EDITOR
