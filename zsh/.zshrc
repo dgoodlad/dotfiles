@@ -111,12 +111,14 @@ function tmux_win() {
 # aws-vault
 
 alias av='aws-vault'
+
 ave() {
-    aws-vault exec $1 -- "${@:2}"
+    aws-vault exec -m $(otp envato-aws-users) $1 -- "${@:2}"
 }
 avs() {
     local profile=$1
-    aws-vault exec $profile -- env PS1="\[aws ${profile}\] $ " $SHELL
+    ave $profile env PS1="\[aws ${profile}\] $ " $SHELL
+    #aws-vault exec -m $(otp envato-aws-users) $profile -- env PS1="\[aws ${profile}\] $ " $SHELL
 }
 
 # Fuck you touchbar
