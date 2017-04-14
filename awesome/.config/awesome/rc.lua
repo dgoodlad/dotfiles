@@ -73,6 +73,18 @@ awful.layout.layouts = {
 }
 -- }}}
 
+-- {{{ Volume Control
+
+-- load the widget code
+local volume_control = require("volume-control")
+
+-- define your volume control, using default settings:
+volumecfg = volume_control({
+    device = "pulse"
+})
+
+-- }}}
+
 -- {{{ Helper functions
 local function client_menu_toggle_fn()
     local instance = nil
@@ -216,6 +228,7 @@ awful.screen.connect_for_each_screen(function(s)
             mykeyboardlayout,
             wibox.widget.systray(),
             mytextclock,
+            volumecfg.widget,
             s.mylayoutbox,
         },
     }
@@ -328,7 +341,12 @@ globalkeys = awful.util.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey }, "p", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+
+    -- Volume Control
+    awful.key({}, "XF86AudioRaiseVolume", function() volumecfg:up() end),
+    awful.key({}, "XF86AudioLowerVolume", function() volumecfg:down() end),
+    awful.key({}, "XF86AudioMute",        function() volumecfg:toggle() end)
 )
 
 clientkeys = awful.util.table.join(
@@ -542,4 +560,5 @@ end)
 
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
+
 -- }}}
