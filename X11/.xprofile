@@ -1,0 +1,26 @@
+#!/usr/bin/zsh
+
+case $DESKTOP_SESSION in
+    awesome)
+        xrdb -merge $HOME/.Xresources
+        compton -b
+        source $HOME/.zshenv
+        export $PATH
+    ;;
+    i3)
+        xrdb -merge $HOME/.Xresources
+        compton -b
+        source $HOME/.zshenv
+        export $PATH
+    ;;
+    bspwm)
+        xrdb -merge $HOME/.Xresources
+        compton -b -i 0.8 --inactive-dim 0.8
+        source $HOME/.zshenv
+        export $PATH
+    ;;
+    *)
+        source $HOME/.zshenv
+        export $PATH
+    ;;
+esac
