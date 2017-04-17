@@ -34,9 +34,9 @@ border-color =
 padding = 3
 module-margin = 2
 
-font-0 = Droid Sans:size=9:antialias=true:bold;1
+font-0 = Droid Sans:size=10:antialias=true;1
 font-1 = Wuncon Siji:size=10;2
-font-2 = Material Icons:size=9;1
+font-2 = Material Icons:size=9;2
 font-3 = Source Code Pro for Powerline:size=9:antialias=true:bold;1
 
 modules-left = i3 bspwm
@@ -47,9 +47,11 @@ locale = en_AU.UTF-8
 
 tray-position = right
 
+wm-restack = true
+
 [module/xwindow]
 type = internal/xwindow
-label = %title:0:30:...%
+label = %title:0:60:...%
 
 [module/filesystem]
 type = internal/fs
