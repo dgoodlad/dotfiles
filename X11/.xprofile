@@ -15,7 +15,7 @@ case $DESKTOP_SESSION in
     ;;
     bspwm)
         xrdb -merge $HOME/.Xresources
-        compton -b -i 0.8 --inactive-dim 0.8
+        compton -b
         source $HOME/.zshenv
         export $PATH
     ;;
