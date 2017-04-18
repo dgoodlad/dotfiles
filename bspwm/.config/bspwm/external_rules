@@ -1,0 +1,9 @@
+#!/bin/sh
+
+wid=$1
+class=$2
+instance=$3
+
+if [[ -z $class ]] && [[ -z $instance ]] && (xtitle $wid | grep "Google Hangouts is sharing"); then
+    echo "state = floating"
+fi
