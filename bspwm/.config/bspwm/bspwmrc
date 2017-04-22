@@ -4,7 +4,7 @@ sxhkd &
 polybar -r top &
 nm-applet &
 
-bspc monitor -d 1 2 3 4 5 6
+bspc monitor -d Work 2 3 4 Games
 
 bspc config border_width         2
 bspc config window_gap           9
@@ -25,3 +25,4 @@ bspc config focused_border_color "#44475a"
 
 bspc config external_rules_command "${HOME}/.config/bspwm/external_rules"
 bspc rule -a Emacs state=tiled
+bspc rule -a Steam desktop=Games state=pseudo_tiled
