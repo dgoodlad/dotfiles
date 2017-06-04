@@ -5,22 +5,22 @@ case $DESKTOP_SESSION in
         xrdb -merge $HOME/.Xresources
         compton -b
         source $HOME/.zshenv
-        export $PATH
+        export PATH
     ;;
     i3)
         xrdb -merge $HOME/.Xresources
         compton -b
         source $HOME/.zshenv
-        export $PATH
+        export PATH
     ;;
     bspwm)
         xrdb -merge $HOME/.Xresources
         compton -b
         source $HOME/.zshenv
-        export $PATH
+        export PATH
     ;;
     *)
         source $HOME/.zshenv
-        export $PATH
+        export PATH
     ;;
 esac
