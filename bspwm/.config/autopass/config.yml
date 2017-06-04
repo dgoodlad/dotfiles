@@ -1,0 +1,19 @@
+---
+# you can insert any environment variable inside %{} for it to be replaced by
+# the value of that variable. If it needs to be at the beginning of the string
+# you have to escape it (e.g. `foo: %{BAR}` will raise an error, `foo: '%{BAR}'`
+# will work though)
+
+cache_file: '%{HOME}/.cache/autopass/autopass.cache'
+cache_key: CE8D13E87061ED84
+# key_bindings:
+#   autotype_tan: Alt+t
+#   copy_username: Alt+u
+#   copy_password: Alt+p
+#   open_browser: Alt+o
+
+# clipboard command to use:
+# (default)
+#   clip_command: 'xclip'
+# or
+#   clip_command: 'xclip -selection clipboard'
