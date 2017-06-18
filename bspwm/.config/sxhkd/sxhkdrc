@@ -8,11 +8,11 @@ super + Return
 
 # program launcher
 super + space
-	rofi -combi-modi window,drun -show combi -modi combi
+	rofi -combi-modi window,drun -show combi -modi combi -theme /usr/share/rofi/themes/Monokai.rasi
 
 # program launcher
 super + shift + space
-	rofi -show run
+	rofi -show run -theme /usr/share/rofi/themes/Monokai.rasi
 
 super + backslash
   autopass

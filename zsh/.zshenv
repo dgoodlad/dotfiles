@@ -2,6 +2,8 @@
 [ -d /opt/local/bin ] && PATH=/opt/local/bin:/opt/local/sbin:$PATH
 [ -d /usr/local/bin ] && PATH=/usr/local/bin:/usr/local/sbin:$PATH
 [ -d $HOME/bin ] && PATH=$HOME/bin:$PATH
+[ -d $HOME/.nodenv ] && PATH=$HOME/.nodenv/bin:$PATH
+[ -d $HOME/.rbenv ] && PATH=$HOME/.rbenv/bin:$PATH
 export PATH
 
 [ -d /opt/local/share/man ] && MANPATH=/opt/local/share/man:$MANPATH
@@ -35,11 +37,8 @@ if [ -n "$DESKTOP_SESSION" ]; then
 fi
 
 # rbenv
-if [[ -d $HOME/.rbenv/bin ]] ; then
-    export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then
     eval "$(rbenv init -)"
-else
-    if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 fi
 
 # chruby
