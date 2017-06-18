@@ -1,5 +1,7 @@
 #!/usr/bin/zsh
 
+nvidia-settings -a :0/GPULogoBrightness=0
+
 case $DESKTOP_SESSION in
     awesome)
         xrdb -merge $HOME/.Xresources
@@ -14,6 +16,12 @@ case $DESKTOP_SESSION in
         export PATH
     ;;
     bspwm)
+        xrdb -merge $HOME/.Xresources
+        compton -b
+        source $HOME/.zshenv
+        export PATH
+    ;;
+    xfce)
         xrdb -merge $HOME/.Xresources
         compton -b
         source $HOME/.zshenv

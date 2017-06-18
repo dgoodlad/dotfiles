@@ -6,4 +6,6 @@ instance=$3
 
 if [[ -z $class ]] && [[ -z $instance ]] && (xtitle $wid | grep "Google Hangouts is sharing"); then
     echo "state = floating"
+elif [[ $class == "zoom" ]] && (xtitle $wid | grep Participants); then
+    echo "state = floating"
 fi
