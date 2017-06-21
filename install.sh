@@ -57,6 +57,18 @@ if [ ! -d $HOME/.vim/bundle/Vundle.vim ]; then
     logk
 fi
 
+if [ ! -d $HOME/.rbenv ]; then
+    echo "Installing rbenv"
+    git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+fi
+
+if [ ! -d $HOME/.nodenv ]; then
+    echo "Installing nodenv"
+    git clone https://github.com/nodenv/nodenv.git ~/.nodenv
+    git clone https://github.com/nodenv/node-build.git ~/.nodenv/plugins/node-build
+fi
+
 readonly os=$(uname -s)
 log "Installing dotfiles for ${os}"
 if [[ "${os}" == "Darwin" ]]; then
