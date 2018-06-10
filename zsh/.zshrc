@@ -113,7 +113,10 @@ function tmux_win() {
 alias av='aws-vault'
 
 ave() {
-    aws-vault exec -m $(otp envato-aws-users) $1 -- "${@:2}"
+    aws-vault exec -m $(pass otp envato/aws) $1 -- "${@:2}"
+}
+avl() {
+    aws-vault login -t $(pass otp envato/aws) $1
 }
 avs() {
     local profile=$1
@@ -137,7 +140,7 @@ alias fytb=fuckyoutouchbar
 # Terminix
 
 if [ $TERMINIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
+    source /etc/profile.d/vte*.sh
 fi
 
 # GPG

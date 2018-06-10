@@ -31,6 +31,11 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     lsp
+     rust
+     rust-rls
+     sql
+     python
      graphviz
      csv
      php
@@ -62,9 +67,11 @@ values."
      (org :variables
           org-enable-github-support t)
      osx
+     platformio
      (mu4e :variables
            mu4e-installation-path "/usr/local/Cellar/mu/0.9.16/share/emacs/site-lisp/mu")
      react
+     rust
      (shell :variables
             shell-default-shell 'eshell
             shell-enable-smart-eshell nil
@@ -90,6 +97,7 @@ values."
      chruby
      evil-terminal-cursor-changer
      muttrc-mode
+     platformio-mode
      ;; vcl-mode
      (vcl-mode :location (recipe :fetcher github :repo "ssm/vcl-mode"))
      )
@@ -176,9 +184,9 @@ values."
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font. `powerline-scale' allows to quickly tweak the mode-line
    ;; size to make separators look not too crappy.
-   dotspacemacs-default-font '("Source Code Pro for Powerline"
+   dotspacemacs-default-font '("Hack"
                                :size 14
-                               :weight demibold
+                               :weight normal
                                :width normal
                                :powerline-scale 1.0)
    ;; The leader key
@@ -458,7 +466,7 @@ you should place your code here."
  '(org-agenda-files (quote ("~/Documents/org/envato.org")))
  '(package-selected-packages
    (quote
-    (winum unfill minitest go-guru fuzzy flycheck-credo goto-chg diminish seq hide-comnt dracula-theme docker tablist docker-tramp lua-mode ob-elixir org wgrep smex ivy-hydra counsel-projectile counsel swiper ivy uuidgen thrift pug-mode ox-gfm osx-dictionary org-projectile org-download mwim mu4e-maildirs-extension mu4e-alert ht livid-mode skewer-mode simple-httpd link-hint git-link flycheck-mix eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump column-enforce-mode clojure-snippets undo-tree toc-org org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets htmlize gnuplot vcl-mode hcl-mode powerline rake f pcre2el markdown-mode json-snatcher json-reformat js2-mode parent-mode request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter flx iedit web-completion-data dash-functional pos-tip go-mode inflections edn multiple-cursors paredit s peg eval-sexp-fu highlight spinner queue clojure-mode inf-ruby yasnippet packed elixir-mode pkg-info epl avy async popup bind-key bind-map auto-complete cider tern anzu smartparens flycheck company helm helm-core magit magit-popup git-commit with-editor hydra projectile dash package-build evil muttrc-mode zenburn-theme yaml-mode xterm-color ws-butler wolfram-mode window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package terraform-mode tagedit stan-mode spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle slim-mode shell-pop scss-mode scad-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters quelpa qml-mode projectile-rails popwin persp-mode pbcopy paradox page-break-lines osx-trash orgit open-junk-file neotree multi-term move-text monokai-theme mmm-mode matlab-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode launchctl julia-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio go-eldoc gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav dockerfile-mode disaster diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-c-headers coffee-mode cmake-mode clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile arduino-mode alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
+    (lsp-ui lsp-rust company-lsp lsp-mode irony-eldoc company-irony irony toml-mode racer flycheck-rust cargo rust-mode platformio-mode org-mime ghub let-alist sql-indent yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode helm-pydoc cython-mode company-anaconda anaconda-mode pythonic org-category-capture phpunit phpcbf php-extras php-auto-yasnippets graphviz-dot-mode drupal-mode php-mode csv-mode winum unfill minitest go-guru fuzzy flycheck-credo goto-chg diminish seq hide-comnt dracula-theme docker tablist docker-tramp lua-mode ob-elixir org wgrep smex ivy-hydra counsel-projectile counsel swiper ivy uuidgen thrift pug-mode ox-gfm osx-dictionary org-projectile org-download mwim mu4e-maildirs-extension mu4e-alert ht livid-mode skewer-mode simple-httpd link-hint git-link flycheck-mix eyebrowse evil-visual-mark-mode evil-unimpaired evil-ediff eshell-z dumb-jump column-enforce-mode clojure-snippets undo-tree toc-org org-repo-todo org-present org-pomodoro alert log4e gntp org-plus-contrib org-bullets htmlize gnuplot vcl-mode hcl-mode powerline rake f pcre2el markdown-mode json-snatcher json-reformat js2-mode parent-mode request haml-mode gitignore-mode fringe-helper git-gutter+ git-gutter flx iedit web-completion-data dash-functional pos-tip go-mode inflections edn multiple-cursors paredit s peg eval-sexp-fu highlight spinner queue clojure-mode inf-ruby yasnippet packed elixir-mode pkg-info epl avy async popup bind-key bind-map auto-complete cider tern anzu smartparens flycheck company helm helm-core magit magit-popup git-commit with-editor hydra projectile dash package-build evil muttrc-mode zenburn-theme yaml-mode xterm-color ws-butler wolfram-mode window-numbering which-key web-mode web-beautify volatile-highlights vi-tilde-fringe use-package terraform-mode tagedit stan-mode spacemacs-theme spaceline solarized-theme smooth-scrolling smeargle slim-mode shell-pop scss-mode scad-mode sass-mode rvm ruby-tools ruby-test-mode ruby-end rubocop rspec-mode robe reveal-in-osx-finder restart-emacs rbenv rainbow-delimiters quelpa qml-mode projectile-rails popwin persp-mode pbcopy paradox page-break-lines osx-trash orgit open-junk-file neotree multi-term move-text monokai-theme mmm-mode matlab-mode markdown-toc magit-gitflow macrostep lorem-ipsum linum-relative leuven-theme less-css-mode launchctl julia-mode json-mode js2-refactor js-doc jade-mode info+ indent-guide ido-vertical-mode hungry-delete hl-todo highlight-parentheses highlight-numbers highlight-indentation help-fns+ helm-themes helm-swoop helm-projectile helm-mode-manager helm-make helm-gitignore helm-flx helm-descbinds helm-css-scss helm-company helm-c-yasnippet helm-ag google-translate golden-ratio go-eldoc gitconfig-mode gitattributes-mode git-timemachine git-messenger git-gutter-fringe git-gutter-fringe+ gh-md flycheck-pos-tip flx-ido fill-column-indicator feature-mode fancy-battery expand-region exec-path-from-shell evil-visualstar evil-tutor evil-terminal-cursor-changer evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-args evil-anzu eshell-prompt-extras esh-help enh-ruby-mode emmet-mode elisp-slime-nav dockerfile-mode disaster diff-hl define-word company-web company-tern company-statistics company-quickhelp company-go company-c-headers coffee-mode cmake-mode clj-refactor clean-aindent-mode clang-format cider-eval-sexp-fu chruby bundler buffer-move bracketed-paste auto-yasnippet auto-highlight-symbol auto-compile arduino-mode alchemist aggressive-indent adaptive-wrap ace-window ace-link ace-jump-helm-line ac-ispell)))
  '(paradox-github-token t)
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#A6E22E")

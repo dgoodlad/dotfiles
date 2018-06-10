@@ -27,13 +27,16 @@ Xft.rgba: rgb
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
-URxvt.font:              xft:Meslo LG S DZ for PowerLine:pixelsize=11,xft:Noto Emoji,xft:Deja Vu Sans:pixelsize=11
+!URxvt.font:              xft:Meslo LG S DZ for PowerLine:pixelsize=11,xft:Noto Emoji,xft:Deja Vu Sans:pixelsize=11
+!URxvt.font:              xft:Fira Code:pixelsize=11,xft:Noto Emoji,xft:Deja Vu Sans:pixelsize=11
+URxvt.font:              xft:Hack:size=10,xft:Noto Emoji,xft:Deja Vu Sans:size=10
 URxvt.visualBell:        True
 URxvt.urgentOnBell:      True
 URxvt.scrollBar:         False
 URxvt.skipBuiltinGlyphs: True
 URxvt.internalBorder:    1
-URxvt.externalBorder:    0
+URxvt.externalBorder:    30
+URxvt.shading:           30
 
 ! xscreensaver.Dialog.headingFont:    -*-dejavu sans-bold-r-*-*-18-*-*-*-*-*-*-*
 ! xscreensaver.Dialog.bodyFont:       -*-dejavu sans-medium-r-*-*-18-*-*-*-*-*-*-*

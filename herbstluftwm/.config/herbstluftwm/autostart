@@ -7,15 +7,17 @@ hc() {
 }
 
 hc emit_hook reload
-
-xsetroot -solid '#5A8E3A'
+hsetroot -solid '#282a36'
+hc pad 0 31
 
 # remove all existing keybindings
 hc keyunbind --all
 
+# start the compositor, compton
+pkill compton
+compton &
+
 # keybindings
-# if you have a super key you will be much happier with Mod set to Mod4
-#Mod=Mod1    # Use alt as the main modifier
 Mod=Mod4   # Use the super key as the main modifier
 TERMINAL=alacritty
 
@@ -23,29 +25,27 @@ hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
-hc keybind $Mod-Shift-space spawn rofi -show run
+hc keybind $Mod-Shift-space spawn rofi -show drun
 hc keybind $Mod-backslash spawn $HOME/bin/rofi-pass
+hc keybind $Mod-Alt-l spawn i3lock -e -i Downloads/wallhaven-621258-3440x1440.png -t
+hc keybind $Mod-Alt-Control-l spawn bash -c 'i3lock -e -i Downloads/wallhaven-621258-3440x1440.png -t && sleep 5 && systemctl suspend'
 
 # basic movement
 # focusing clients
-hc keybind $Mod-Left  focus left
-hc keybind $Mod-Down  focus down
-hc keybind $Mod-Up    focus up
-hc keybind $Mod-Right focus right
 hc keybind $Mod-h     focus left
 hc keybind $Mod-j     focus down
 hc keybind $Mod-k     focus up
 hc keybind $Mod-l     focus right
 
 # moving clients
-hc keybind $Mod-Shift-Left  shift left
-hc keybind $Mod-Shift-Down  shift down
-hc keybind $Mod-Shift-Up    shift up
-hc keybind $Mod-Shift-Right shift right
-hc keybind $Mod-Shift-h     shift left
-hc keybind $Mod-Shift-j     shift down
-hc keybind $Mod-Shift-k     shift up
-hc keybind $Mod-Shift-l     shift right
+hc keybind $Mod-Shift-h or / shift left / \
+    chain , lock , shift_to_monitor -l , focus_monitor -l , unlock
+hc keybind $Mod-Shift-j or / shift down / \
+    chain , lock , shift_to_monitor -d , focus_monitor -d , unlock
+hc keybind $Mod-Shift-k or / shift up / \
+    chain , lock , shift_to_monitor -u , focus_monitor -u , unlock
+hc keybind $Mod-Shift-l or / shift right / \
+    chain , lock , shift_to_monitor -r , focus_monitor -r , unlock
 
 # splitting frames
 # create an empty frame at the specified direction
@@ -60,13 +60,9 @@ hc keybind $Mod-Control-h       resize left +$resizestep
 hc keybind $Mod-Control-j       resize down +$resizestep
 hc keybind $Mod-Control-k       resize up +$resizestep
 hc keybind $Mod-Control-l       resize right +$resizestep
-hc keybind $Mod-Control-Left    resize left +$resizestep
-hc keybind $Mod-Control-Down    resize down +$resizestep
-hc keybind $Mod-Control-Up      resize up +$resizestep
-hc keybind $Mod-Control-Right   resize right +$resizestep
 
 # tags
-tag_names=( {1..9} )
+tag_names=( work code browse gimp {5..9} chat )
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
@@ -113,36 +109,44 @@ hc set focus_follows_mouse 1
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-hc set frame_border_active_color '#222222'
-hc set frame_border_normal_color '#101010'
-hc set frame_bg_normal_color '#565656'
-hc set frame_bg_active_color '#345F0C'
+hc set frame_border_active_color '#6272a4'
+hc set frame_border_normal_color '#282a36'
+hc set frame_bg_normal_color '#282a36'
+hc set frame_bg_active_color '#44475a'
 hc set frame_border_width 1
 hc set always_show_frame 1
-hc set frame_bg_transparent 1
-hc set frame_transparent_width 5
-hc set frame_gap 0
+hc set frame_active_opacity 0
+hc set frame_normal_opacity 0
+hc set frame_transparent_width 0
+hc set frame_gap 12
 
-hc attr theme.active.color '#9fbc00'
-hc attr theme.normal.color '#454545'
-hc attr theme.urgent.color orange
-hc attr theme.inner_width 1
+hc attr theme.active.color '#8be9fd'
+hc attr theme.normal.color '#282a36'
+hc attr theme.urgent.color '#ffb86c'
+hc attr theme.inner_width 0
 hc attr theme.inner_color black
-hc attr theme.border_width 3
-hc attr theme.floating.border_width 4
-hc attr theme.floating.outer_width 1
+hc attr theme.border_width 2
+hc attr theme.floating.border_width 2
+hc attr theme.floating.outer_width 0
 hc attr theme.floating.outer_color black
 hc attr theme.active.inner_color '#3E4A00'
 hc attr theme.active.outer_color '#3E4A00'
 hc attr theme.background_color '#141414'
 
-hc set window_gap 10
-hc set frame_padding 0
+#hc attr theme.minimal.border_width 3
+#hc attr theme.minimal.inner_width 2
+#hc attr theme.minimal.active.color '#8be9fd'
+#hc attr theme.minimal.normal.color '#282a36'
+#hc attr theme.minimal.urgent.color '#ffb86c'
+#hc attr theme.minimal.active.inner_color '#3E4A00'
+#hc attr theme.minimal.active.outer_color '#3E4A00'
+
+hc set window_gap 24
+hc set frame_padding 1
 hc set smart_window_surroundings 0
 hc set smart_frame_surroundings 1
 hc set mouse_recenter_gap 0
 
-hc pad 0 30
 
 # rules
 hc unrule -F
@@ -155,15 +159,41 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
+hc rule title~"Android Emulator -" tag=code pseudotile=on
+
+# GIMP
+# load predefined layout
+hc load gimp '
+(split horizontal:0.850000:0
+(split horizontal:0.200000:1
+(clients vertical:0)
+(clients grid:0))
+(clients vertical:0))
+'
+# center all other gimp windows on gimp tag
+hc rule class=Gimp tag=gimp index=01 pseudotile=on
+hc rule class=Gimp windowrole~'gimp-(image-window|toolbox|dock)' \
+pseudotile=off
+hc rule class=Gimp windowrole=gimp-toolbox focus=off index=00
+hc rule class=Gimp windowrole=gimp-dock focus=off index=1
+
+# work
+hc rule class="Google-chrome" tag=work
+hc rule title~"Google Hangouts is sharing" tag=work manage=off focus=off
+
+# chat
+hc rule class=Signal tag=chat
+hc rule class=Slack tag=chat
+
 # unlock, just to be sure
 hc unlock
 
-herbstclient set tree_style '╾│ ├└╼─┐'
+hc set tree_style '╾│ ├└╼─┐'
 
 # do multi monitor setup here, e.g.:
 # hc set_monitors 1280x1024+0+0 1280x1024+1280+0
 # or simply:
-# hc detect_monitors
+hc detect_monitors
 
 # find the panel
 #panel=~/.config/herbstluftwm/panel.sh
@@ -172,3 +202,7 @@ herbstclient set tree_style '╾│ ├└╼─┐'
 #    # start it on each monitor
 #    "$panel" $monitor &
 #done
+
+# make sure we've got polybar runnin
+pkill polybar
+polybar main &

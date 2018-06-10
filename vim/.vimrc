@@ -29,6 +29,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'peterhoeg/vim-tmux'
 "Plugin 'kikijump/tslime.vim'
 Plugin 'rodjek/vim-puppet'
+Plugin 'dracula/vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -84,7 +85,9 @@ if &t_Co > 2 || has("gui_running")
   let g:solarized_termtrans=0
   let g:solarized_visibility='low'
   set background=dark
-  colorscheme solarized
+  "colorscheme solarized
+
+  colorscheme dracula
 endif
 
 if has("autocmd")

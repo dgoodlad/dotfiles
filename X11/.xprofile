@@ -28,6 +28,7 @@ case $DESKTOP_SESSION in
         export PATH
     ;;
     *)
+        xrdb -merge $HOME/.Xresources
         source $HOME/.zshenv
         export PATH
     ;;

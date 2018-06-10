@@ -1,10 +1,17 @@
 [ -d /usr/X11 ] && PATH=/usr/X11/bin:/usr/X11/sbin:$PATH
 [ -d /opt/local/bin ] && PATH=/opt/local/bin:/opt/local/sbin:$PATH
 [ -d /usr/local/bin ] && PATH=/usr/local/bin:/usr/local/sbin:$PATH
+[ -d $HOME/.local/bin ] && PATH=$HOME/.local/bin:$PATH
 [ -d $HOME/bin ] && PATH=$HOME/bin:$PATH
 [ -d $HOME/.nodenv ] && PATH=$HOME/.nodenv/bin:$PATH
 [ -d $HOME/.rbenv ] && PATH=$HOME/.rbenv/bin:$PATH
+[ -d /usr/local/go/bin ] && PATH=/usr/local/go/bin:$PATH
+[ -d $HOME/.yarn/bin ] && PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH
+
+[ -d $HOME/Android/Sdk ] \
+    && export ANDROID_HOME=$HOME/Android/Sdk \
+    && export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 [ -d /opt/local/share/man ] && MANPATH=/opt/local/share/man:$MANPATH
 [ -d /usr/local/share/man ] && MANPATH=/usr/local/share/man:$MANPATH
@@ -55,6 +62,11 @@ if which nodenv > /dev/null; then
     eval "$(nodenv init -)"
 fi
 
+if [[ -f $HOME/.cargo/env ]]; then
+    source $HOME/.cargo/env
+    export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
+
 export GOPATH=${HOME}/src/go
 export PATH=${GOPATH}/bin:$PATH
 
@@ -76,3 +88,4 @@ alias ec="$EMACSCLIENT -c -n"
 export EDITOR="$EMACSCLIENT -c"
 export ALTERNATE_EDITOR="/usr/bin/vim"
 export VISUAL=$EDITOR
+
