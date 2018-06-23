@@ -11,7 +11,7 @@ export PATH
 
 [ -d $HOME/Android/Sdk ] \
     && export ANDROID_HOME=$HOME/Android/Sdk \
-    && export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
+    && export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/tools/bin:$ANDROID_HOME/platform-tools
 
 [ -d /opt/local/share/man ] && MANPATH=/opt/local/share/man:$MANPATH
 [ -d /usr/local/share/man ] && MANPATH=/usr/local/share/man:$MANPATH

@@ -27,6 +27,14 @@ case $DESKTOP_SESSION in
         source $HOME/.zshenv
         export PATH
     ;;
+    herbstluftwm)
+        xrandr --output DP-0.8 --primary --left-of HDMI-0
+        xrdb -merge $HOME/.Xresources
+        xset +fp $HOME/.fonts
+        xset fp rehash
+        source $HOME/.zshenv
+        export PATH
+    ;;
     *)
         xrdb -merge $HOME/.Xresources
         source $HOME/.zshenv
