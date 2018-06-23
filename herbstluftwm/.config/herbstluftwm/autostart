@@ -27,8 +27,8 @@ hc keybind $Mod-Shift-c close
 hc keybind $Mod-Return spawn ${TERMINAL:-xterm} # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Shift-space spawn rofi -show drun
 hc keybind $Mod-backslash spawn $HOME/bin/rofi-pass
-hc keybind $Mod-Alt-l spawn i3lock -e -i Downloads/wallhaven-621258-3440x1440.png -t
-hc keybind $Mod-Alt-Control-l spawn bash -c 'i3lock -e -i Downloads/wallhaven-621258-3440x1440.png -t && sleep 5 && systemctl suspend'
+hc keybind $Mod-Alt-l spawn i3lock -e -t
+hc keybind $Mod-Alt-Control-l spawn bash -c 'i3lock -e -t && sleep 5 && systemctl suspend'
 
 # basic movement
 # focusing clients
@@ -62,7 +62,7 @@ hc keybind $Mod-Control-k       resize up +$resizestep
 hc keybind $Mod-Control-l       resize right +$resizestep
 
 # tags
-tag_names=( work code browse gimp {5..9} chat )
+tag_names=( work code browse gimp android {6..9} chat )
 tag_keys=( {1..9} 0 )
 
 hc rename default "${tag_names[0]}" || true
@@ -159,7 +159,23 @@ hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
 hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 
-hc rule title~"Android Emulator -" tag=code pseudotile=on
+hc load android '
+(split horizontal:0.200000:1
+(split horizontal:0.250000:1
+(clients vertical:1)
+(clients max:1))
+(clients max:1))
+'
+# Main Android Studio window
+hc rule class="jetbrains-studio" title~"Android Studio$" tag=android index=1
+# AVD Manager dialog
+hc rule class="jetbrains-studio" title="Android Virtual Device Manager" tag=android index=1 pseudotile=on
+# Settings
+hc rule class="jetbrains-studio" title="Default Settings" tag=android index=1 pseudotile=on
+# Emulator main window
+hc rule title~"^Android Emulator -" windowtype='_NET_WM_WINDOW_TYPE_NORMAL' tag=android pseudotile=on index=01
+# Emulator extra windows
+hc rule windowtype='_NET_WM_WINDOW_TYPE_UTILITY' title="Emulator" index=00 pseudotile=on
 
 # GIMP
 # load predefined layout
