@@ -8,3 +8,4 @@
 
 (package! platformio-mode)
 (package! scad-mode)
+(package! cargo)

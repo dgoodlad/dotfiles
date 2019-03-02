@@ -1,10 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/dgoodlad/src/OpenCorsairLink'
-let g:netrw_dirhist_2='/home/dgoodlad/src/OpenCorsairLink/lowlevel'
-let g:netrw_dirhist_3='/home/dgoodlad/.local/share/applications'
-let g:netrw_dirhist_4='/home/dgoodlad/src/rust/esp-rs'
-let g:netrw_dirhist_5='/home/dgoodlad/src/HeatPump/src'
-let g:netrw_dirhist_6='/etc/grub.d'
-let g:netrw_dirhist_7='/home/dgoodlad/src/rs-corsair/src'
-let g:netrw_dirhist_8='/home/dgoodlad/.dotfiles/bspwm/.config/polybar'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/dgoodlad/src/esp8266-mitsubishi-aircon/lib/HeatPump'
+let g:netrw_dirhist_2='/home/dgoodlad/Downloads/sdk-ameba-v4.0b_without_NDA_GCC_V1.0.0/component/soc/realtek/8195a/misc/driver'
+let g:netrw_dirhist_3='/home/dgoodlad/Downloads/sdk-ameba-v4.0b_without_NDA_GCC_V1.0.0/component/common/api/network/include'
+let g:netrw_dirhist_4='/home/dgoodlad/Downloads/sdk-ameba-v4.0b_without_NDA_GCC_V1.0.0/component/common/api/network'
+let g:netrw_dirhist_5='/home/dgoodlad/Downloads/sdk-ameba-v4.0b_without_NDA_GCC_V1.0.0/component/common/api/network/src'

@@ -1,6 +1,6 @@
 #!/usr/bin/zsh
 
-nvidia-settings -a :0/GPULogoBrightness=0
+#nvidia-settings -a :0/GPULogoBrightness=0
 
 case $DESKTOP_SESSION in
     awesome)
@@ -28,7 +28,7 @@ case $DESKTOP_SESSION in
         export PATH
     ;;
     herbstluftwm)
-        xrandr --output DP-0.8 --primary --left-of HDMI-0
+        #xrandr --output DP-0.8 --primary --left-of HDMI-0
         xrdb -merge $HOME/.Xresources
         xset +fp $HOME/.fonts
         xset fp rehash
@@ -36,7 +36,7 @@ case $DESKTOP_SESSION in
         export PATH
     ;;
     *)
-        xrdb -merge $HOME/.Xresources
+        #xrdb -merge $HOME/.Xresources
         source $HOME/.zshenv
         export PATH
     ;;

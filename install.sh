@@ -76,7 +76,14 @@ if [[ "${os}" == "Darwin" ]]; then
 else
     stow X11
     stow awesome
+    stow herbstluftwm
 fi
 logk
+
+log "Installing nerdfonts"
+git clone --depth 1 https://github.com/ryanoasis/nerd-fonts.git ~/.nerd-fonts
+pushd ~/.nerd-fonts
+./install.sh
+popd
 
 popd >/dev/null
