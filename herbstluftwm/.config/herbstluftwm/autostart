@@ -19,6 +19,8 @@ compton &
 
 /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 
+udiskie --tray --use-udisks2 &
+
 # keybindings
 Mod=Mod4   # Use the super key as the main modifier
 TERMINAL=alacritty
