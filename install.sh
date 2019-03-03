@@ -39,8 +39,8 @@ stow zsh
 logk
 
 if [ ! -d $HOME/.emacs.d ]; then
-    log "Installing spacemacs:"
-    git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d
+    log "Installing Emacs DOOM:"
+    git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
     logk
 fi
 
